@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPE3_MLK", "PPE3_MLK\PPE3_MLK.csproj", "{45EF816A-82F1-41DD-8718-6117DDD238DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45EF816A-82F1-41DD-8718-6117DDD238DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45EF816A-82F1-41DD-8718-6117DDD238DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45EF816A-82F1-41DD-8718-6117DDD238DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45EF816A-82F1-41DD-8718-6117DDD238DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0DFF8D8-B1B9-4850-8BCB-E2007BAF7CAA}
+	EndGlobalSection
+EndGlobal
