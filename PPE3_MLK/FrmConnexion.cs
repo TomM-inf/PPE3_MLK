@@ -16,6 +16,14 @@ namespace PPE3_MLK
         {
             InitializeComponent();
             lblTitre.ForeColor = System.Drawing.Color.FromArgb(46,28,142);
+            lblMsg.Visible = false;
+        }
+
+        private void BtnOK_Click(object sender, EventArgs e)
+        {
+            string reponse = Modele.validConnexion(txtIdentifiant.Text, txtMDP.Text);
+            lblMsg.Text = reponse;
+            lblMsg.Visible = true;
         }
     }
 }
