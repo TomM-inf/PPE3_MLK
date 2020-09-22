@@ -15,6 +15,7 @@ namespace PPE3_MLK
         public FrmConnexion()
         {
             InitializeComponent();
+            lblTitre.ForeColor = System.Drawing.Color.FromArgb(46,28,142);
         }
     }
 }
