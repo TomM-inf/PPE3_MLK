@@ -48,18 +48,19 @@ namespace PPE3_MLK
                 message = "Identifiant ou mot de passe incorrect"; //si ça ne marche pas alors Identifiant incorrect
                 Console.WriteLine(ex);
             }
-            if(VisiteurConnecte != null) //si l'identifiant à été reconnu
+            if (VisiteurConnecte != null) //si l'identifiant à été reconnu
             {
-                if(mp.Length == 0)
+                if (mp.Length == 0)
                 {
                     message = "Merci de saisir un mot de passe";
                 }
                 else
                 {
-                    if(VisiteurConnecte.password.Equals(GetMd5Hash(mp)) == true) //si les MDP correspondent
+
+                    if (VisiteurConnecte.password.Equals(GetMd5Hash(mp)) == true) //si les MDP correspondent
                     {
                         ConnexionValide = true;
-                        message = "Connexion valide";
+                        message = "valide";
                     }
                     else
                     {
@@ -75,7 +76,7 @@ namespace PPE3_MLK
             Object vretour = null;
             var LQuery = maConnexion.Visiteur.ToList()
                 .Where(x => x.identifiant == id);
-            if( LQuery.ToList().Count()==1)
+            if (LQuery.ToList().Count() == 1)
             { vretour = LQuery.ToList()[0]; }
             return vretour;
         }

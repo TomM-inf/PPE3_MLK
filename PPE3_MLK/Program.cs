@@ -17,6 +17,7 @@ namespace PPE3_MLK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Modele.init();
             Application.Run(new FrmConnexion());
         }
     }
