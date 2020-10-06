@@ -34,9 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 451);
             this.Name = "FrmMenu";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "Menu";
             this.ResumeLayout(false);
 
         }
