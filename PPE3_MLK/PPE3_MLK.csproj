@@ -8,11 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>PPE3_MLK</RootNamespace>
     <AssemblyName>PPE3_MLK</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,19 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,23 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Etat.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FAMILLE.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="fichefrais.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FraisForfait.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConnexion.cs">
+    <Compile Include="FrmFrais.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConnexion.Designer.cs">
-      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    <Compile Include="FrmFrais.Designer.cs">
+      <DependentUpon>FrmFrais.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMenu.cs">
       <SubType>Form</SubType>
@@ -82,63 +58,8 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Laboratoire.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LigneFraisForfait.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LigneFraisHorsForfait.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mdlProjetGSB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mdlProjetGSB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mdlProjetGSB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mdlProjetGSB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="MEDECIN.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MEDICAMENT.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modele.cs" />
-    <Compile Include="MOTIF.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OFFRIR.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RAPPORT.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Region.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Secteur.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SPECIALITE.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Visiteur.cs">
-      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="FrmConnexion.resx">
-      <DependentUpon>FrmConnexion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,16 +71,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="mdlProjetGSB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>mdlProjetGSB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="mdlProjetGSB.edmx.diagram">
-      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
-    </None>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -172,25 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\userPic.ico" />
-    <None Include="Resources\userPic.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="mdlProjetGSB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
-      <LastGenOutput>mdlProjetGSB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="mdlProjetGSB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
-      <LastGenOutput>mdlProjetGSB.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
