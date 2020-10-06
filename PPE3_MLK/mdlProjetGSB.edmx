@@ -952,7 +952,7 @@
           <End Type="GSB2_GroupeMLKModel.Region" Role="Region" Multiplicity="*" />
           <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="*" />
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
