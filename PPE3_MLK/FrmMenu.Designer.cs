@@ -1,6 +1,6 @@
 ﻿namespace PPE3_MLK
 {
-    partial class FrmMenu
+    partial class Form1
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
