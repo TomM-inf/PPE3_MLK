@@ -13,10 +13,10 @@ namespace PPE3_MLK
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class connectProjetGSB : DbContext
+    public partial class GSB2_GroupeMLKEntities : DbContext
     {
-        public connectProjetGSB()
-            : base("name=connectProjetGSB")
+        public GSB2_GroupeMLKEntities()
+            : base("name=GSB2_GroupeMLKEntities")
         {
         }
     
@@ -25,9 +25,21 @@ namespace PPE3_MLK
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Etat> Etat { get; set; }
+        public virtual DbSet<FAMILLE> FAMILLE { get; set; }
+        public virtual DbSet<fichefrais> fichefrais { get; set; }
+        public virtual DbSet<FraisForfait> FraisForfait { get; set; }
         public virtual DbSet<Laboratoire> Laboratoire { get; set; }
+        public virtual DbSet<LigneFraisForfait> LigneFraisForfait { get; set; }
+        public virtual DbSet<LigneFraisHorsForfait> LigneFraisHorsForfait { get; set; }
+        public virtual DbSet<MEDECIN> MEDECIN { get; set; }
+        public virtual DbSet<MEDICAMENT> MEDICAMENT { get; set; }
+        public virtual DbSet<MOTIF> MOTIF { get; set; }
+        public virtual DbSet<OFFRIR> OFFRIR { get; set; }
+        public virtual DbSet<RAPPORT> RAPPORT { get; set; }
         public virtual DbSet<Region> Region { get; set; }
         public virtual DbSet<Secteur> Secteur { get; set; }
+        public virtual DbSet<SPECIALITE> SPECIALITE { get; set; }
         public virtual DbSet<Visiteur> Visiteur { get; set; }
     }
 }

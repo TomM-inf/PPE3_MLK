@@ -4,16 +4,40 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="18750bba78a54767a540c7106d13df90" Name="Diagram1">
-        <EntityTypeShape EntityType="mdlProjetGSB.Laboratoire" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="mdlProjetGSB.Region" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="mdlProjetGSB.Secteur" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="mdlProjetGSB.Visiteur" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
-        <AssociationConnector Association="mdlProjetGSB.FK_Laboratoire" ManuallyRouted="false" />
-        <AssociationConnector Association="mdlProjetGSB.FK_SECTEUR" ManuallyRouted="false" />
-        <AssociationConnector Association="mdlProjetGSB.FK_VISITEUR" ManuallyRouted="false" />
-        <AssociationConnector Association="mdlProjetGSB.FK_VISITEURSECTEUR" ManuallyRouted="false" />
-        <AssociationConnector Association="mdlProjetGSB.Travailler" ManuallyRouted="false" />
+      <Diagram DiagramId="a750d7eb8a134ce496625da574d5973b" Name="Diagram1">
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.Etat" Width="1.5" PointX="6" PointY="4.25" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.FAMILLE" Width="1.5" PointX="6" PointY="1.25" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.fichefrais" Width="1.5" PointX="8.25" PointY="7.5" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.FraisForfait" Width="1.5" PointX="8.25" PointY="4.125" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.Laboratoire" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.LigneFraisForfait" Width="1.5" PointX="10.5" PointY="5" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.LigneFraisHorsForfait" Width="1.5" PointX="10.5" PointY="7.875" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.MEDECIN" Width="1.5" PointX="3" PointY="11.875" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.MEDICAMENT" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.MOTIF" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.OFFRIR" Width="1.5" PointX="10.5" PointY="11" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.RAPPORT" Width="1.5" PointX="5.25" PointY="7.5" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.Region" Width="1.5" PointX="7.5" PointY="12.625" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.Secteur" Width="1.5" PointX="5.25" PointY="18.5" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.SPECIALITE" Width="1.5" PointX="0.75" PointY="12.375" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.Visiteur" Width="1.5" PointX="3" PointY="7" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK__fichefrai__idEta__5629CD9C" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.medicament_fk" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK__fichefrai__idVis__571DF1D5" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK__LigneFraisForfai__5CD6CB2B" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK__LigneFraisHorsFo__656C112C" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK_Laboratoire" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.medecin_fk" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.rapport_fk2" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.offrir_fk2" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.rapport_fk3" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.offrir_fk1" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.rapport_fk1" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK_SECTEUR" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK_VISITEUR" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK_VISITEURSECTEUR" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.Travailler" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PPE3_MLK
 {
@@ -21,7 +22,7 @@ namespace PPE3_MLK
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
-            string reponse = Modele.validConnexion(txtIdentifiant.Text, txtMDP.Text);
+            string reponse = Modele.validConnexion(txtIdentifiant.Text.ToString(), txtMDP.Text.ToString());
             lblMsg.Text = reponse;
             lblMsg.Visible = true;
         }
