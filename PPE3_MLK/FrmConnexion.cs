@@ -25,6 +25,17 @@ namespace PPE3_MLK
             string reponse = Modele.validConnexion(txtIdentifiant.Text.ToString(), txtMDP.Text.ToString());
             lblMsg.Text = reponse;
             lblMsg.Visible = true;
+            if(reponse == "valide")
+            {
+                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+                t.Start();
+                this.Close();
+            }
+        }
+
+        public static void ThreadProc()
+        {
+            Application.Run(new FrmMenu());
         }
     }
 }

@@ -60,7 +60,7 @@ namespace PPE3_MLK
                     if(VisiteurConnecte.password.Equals(GetMd5Hash(mp)) == true) //si les MDP correspondent
                     {
                         ConnexionValide = true;
-                        message = "Connexion valide";
+                        message = "valide";
                     }
                     else
                     {
