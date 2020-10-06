@@ -28,27 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.menuStrpMain = new System.Windows.Forms.MenuStrip();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informationsDuCompteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrpMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // menuStrpMain
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(342, 157);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "test";
+            this.menuStrpMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optionsToolStripMenuItem});
+            this.menuStrpMain.Location = new System.Drawing.Point(0, 0);
+            this.menuStrpMain.Name = "menuStrpMain";
+            this.menuStrpMain.Size = new System.Drawing.Size(800, 24);
+            this.menuStrpMain.TabIndex = 0;
+            this.menuStrpMain.Text = "menuStrip1";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informationsDuCompteToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // informationsDuCompteToolStripMenuItem
+            // 
+            this.informationsDuCompteToolStripMenuItem.Name = "informationsDuCompteToolStripMenuItem";
+            this.informationsDuCompteToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.informationsDuCompteToolStripMenuItem.Text = "Informations du compte";
+            this.informationsDuCompteToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.informationsDuCompteToolStripMenuItem.Click += new System.EventHandler(this.InformationsDuCompteToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrpMain);
+            this.MainMenuStrip = this.menuStrpMain;
             this.Name = "FrmMenu";
             this.ShowIcon = false;
             this.Text = "Menu";
+            this.menuStrpMain.ResumeLayout(false);
+            this.menuStrpMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -56,7 +80,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrpMain;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informationsDuCompteToolStripMenuItem;
     }
 }
 
