@@ -16,7 +16,7 @@ namespace PPE3_MLK
         public FrmMenu()
         {
             InitializeComponent();
-            //test
+            
         }
     }
 }
