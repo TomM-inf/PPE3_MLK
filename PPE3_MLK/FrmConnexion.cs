@@ -22,7 +22,7 @@ namespace PPE3_MLK
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
-            string reponse = Modele.validConnexion(txtIdentifiant.Text.ToString(), txtMDP.Text.ToString());
+            string reponse = Modele.validConnexion(txtIdentifiant.Text, txtMDP.Text);
             lblMsg.Text = reponse;
             lblMsg.Visible = true;
         }
