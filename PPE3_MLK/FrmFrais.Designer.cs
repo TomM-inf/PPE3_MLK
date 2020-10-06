@@ -35,7 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnModif = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dgv3 = new System.Windows.Forms.DataGridView();
@@ -49,6 +48,7 @@
             this.dgvListFicheFrais = new System.Windows.Forms.DataGridView();
             this.bsFicheFrais = new System.Windows.Forms.BindingSource(this.components);
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv3)).BeginInit();
@@ -91,7 +91,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnQuitter);
             this.panel1.Controls.Add(this.dgvListFicheFrais);
-            this.panel1.Location = new System.Drawing.Point(16, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(809, 503);
             this.panel1.TabIndex = 4;
@@ -123,19 +123,11 @@
             this.panel2.Size = new System.Drawing.Size(505, 488);
             this.panel2.TabIndex = 2;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(184, 267);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Autres Frais";
-            // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(364, 453);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 8;
             // 
@@ -143,6 +135,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(258, 453);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 7;
             // 
@@ -151,6 +144,7 @@
             this.dgv3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv3.Location = new System.Drawing.Point(27, 283);
             this.dgv3.Name = "dgv3";
+            this.dgv3.ReadOnly = true;
             this.dgv3.Size = new System.Drawing.Size(433, 150);
             this.dgv3.TabIndex = 6;
             // 
@@ -161,6 +155,7 @@
             this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv2.Location = new System.Drawing.Point(27, 100);
             this.dgv2.Name = "dgv2";
+            this.dgv2.ReadOnly = true;
             this.dgv2.Size = new System.Drawing.Size(433, 150);
             this.dgv2.TabIndex = 5;
             // 
@@ -168,6 +163,7 @@
             // 
             this.txt2.Location = new System.Drawing.Point(132, 62);
             this.txt2.Name = "txt2";
+            this.txt2.ReadOnly = true;
             this.txt2.Size = new System.Drawing.Size(100, 20);
             this.txt2.TabIndex = 4;
             this.txt2.TextChanged += new System.EventHandler(this.Txt2_TextChanged);
@@ -176,6 +172,7 @@
             // 
             this.txt1.Location = new System.Drawing.Point(132, 36);
             this.txt1.Name = "txt1";
+            this.txt1.ReadOnly = true;
             this.txt1.Size = new System.Drawing.Size(100, 20);
             this.txt1.TabIndex = 3;
             this.txt1.TextChanged += new System.EventHandler(this.txt1_TextChanged);
@@ -232,9 +229,17 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(148, 45);
             this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(184, 267);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Autres Frais";
             // 
             // FrmFrais
             // 
