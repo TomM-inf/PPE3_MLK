@@ -56,8 +56,8 @@
             // informationsDuCompteToolStripMenuItem
             // 
             this.informationsDuCompteToolStripMenuItem.Name = "informationsDuCompteToolStripMenuItem";
-            this.informationsDuCompteToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.informationsDuCompteToolStripMenuItem.Text = "Informations du compte";
+            this.informationsDuCompteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.informationsDuCompteToolStripMenuItem.Text = "Gestion du compte";
             this.informationsDuCompteToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.informationsDuCompteToolStripMenuItem.Click += new System.EventHandler(this.InformationsDuCompteToolStripMenuItem_Click);
             // 

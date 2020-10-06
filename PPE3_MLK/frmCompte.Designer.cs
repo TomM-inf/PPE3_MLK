@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(397, 199);
             this.Name = "frmCompte";
             this.ShowIcon = false;
-            this.Text = "Informations du compte";
+            this.Text = "Gestion du compte";
             this.ResumeLayout(false);
 
         }
