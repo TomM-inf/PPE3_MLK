@@ -20,7 +20,8 @@ namespace PPE3_MLK
 
         private void InformationsDuCompteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmCompte fCompte = new frmCompte();
+            fCompte.ShowDialog();
         }
     }
 }
