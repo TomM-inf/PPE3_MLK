@@ -80,5 +80,19 @@ namespace PPE3_MLK
             { vretour = LQuery.ToList()[0]; }
             return vretour;
         }
+
+        public static string nomVisiteur()  //pour afficher le nom et le prénom du gadjo.
+        {
+            string vretour="";
+            vretour = VisiteurConnecte.nom + " " + VisiteurConnecte.prenom;
+            return vretour;
+        }
+
+        public static List<fichefrais> ListeFiche() //la liste de fiches pour l'afficher ensuite.
+        {
+            return maConnexion.fichefrais.ToList();
+        }
+
     }
+
 }
