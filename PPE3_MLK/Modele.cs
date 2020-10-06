@@ -9,6 +9,7 @@ namespace PPE3_MLK
 {
     class Modele
     {
+        /*
         private static GSB2_GroupeMLKEntities maConnexion;
         private static Visiteur visiteurConnecte;
         private static bool connexionValide;
@@ -28,7 +29,7 @@ namespace PPE3_MLK
             byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(PasswdSaisi);
             byte[] hash = (MD5.Create()).ComputeHash(inputBytes);
             StringBuilder sb = new StringBuilder();
-            for(int i = 0; i < hash.Length; i++)
+            for (int i = 0; i < hash.Length; i++)
             {
                 sb.Append(hash[i].ToString("x2"));
             }
@@ -48,19 +49,19 @@ namespace PPE3_MLK
                 message = "test"; //si ça ne marche pas alors Identifiant incorrect
                 Console.WriteLine(ex);
             }
-            if(VisiteurConnecte != null) //si l'identifiant à été reconnu
+            if (VisiteurConnecte != null) //si l'identifiant à été reconnu
             {
-                if(mp.Length == 0)
+                if (mp.Length == 0)
                 {
                     message = "Merci de saisir un mot de passe";
                 }
                 else
                 {
-                    
-                    if(VisiteurConnecte.password.Equals(GetMd5Hash(mp)) == true) //si les MDP correspondent
+
+                    if (VisiteurConnecte.password.Equals(GetMd5Hash(mp)) == true) //si les MDP correspondent
                     {
                         ConnexionValide = true;
-                        message = "Connexion valide";
+                        message = "valide";
                     }
                     else
                     {
@@ -76,9 +77,10 @@ namespace PPE3_MLK
             Object vretour = null;
             var LQuery = maConnexion.Visiteur.ToList()
                 .Where(x => x.identifiant == id);
-            if( LQuery.ToList().Count()==1)
+            if (LQuery.ToList().Count() == 1)
             { vretour = LQuery.ToList()[0]; }
             return vretour;
         }
+        */
     }
 }

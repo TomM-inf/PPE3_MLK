@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="GSB2_GroupeMLKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="GSB_GroupeMLKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Etat">
           <Key>
             <PropertyRef Name="id" />
@@ -385,7 +385,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="GSB2_GroupeMLKModelStoreContainer">
+        <EntityContainer Name="GSB_GroupeMLKModelStoreContainer">
           <EntitySet Name="Etat" EntityType="Self.Etat" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="FAMILLE" EntityType="Self.FAMILLE" Schema="db_owner" store:Type="Tables" />
           <EntitySet Name="fichefrais" EntityType="Self.fichefrais" Schema="db_owner" store:Type="Tables" />
@@ -476,136 +476,51 @@
             <End Role="RAPPORT" EntitySet="RAPPORT" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="GSB2_GroupeMLKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="GSB2_GroupeMLKEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Etat" EntityType="GSB2_GroupeMLKModel.Etat" />
-          <EntitySet Name="FAMILLE" EntityType="GSB2_GroupeMLKModel.FAMILLE" />
-          <EntitySet Name="fichefrais" EntityType="GSB2_GroupeMLKModel.fichefrais" />
-          <EntitySet Name="FraisForfait" EntityType="GSB2_GroupeMLKModel.FraisForfait" />
-          <EntitySet Name="Laboratoire" EntityType="GSB2_GroupeMLKModel.Laboratoire" />
-          <EntitySet Name="LigneFraisForfait" EntityType="GSB2_GroupeMLKModel.LigneFraisForfait" />
-          <EntitySet Name="LigneFraisHorsForfait" EntityType="GSB2_GroupeMLKModel.LigneFraisHorsForfait" />
-          <EntitySet Name="MEDECIN" EntityType="GSB2_GroupeMLKModel.MEDECIN" />
-          <EntitySet Name="MEDICAMENT" EntityType="GSB2_GroupeMLKModel.MEDICAMENT" />
-          <EntitySet Name="MOTIF" EntityType="GSB2_GroupeMLKModel.MOTIF" />
-          <EntitySet Name="OFFRIR" EntityType="GSB2_GroupeMLKModel.OFFRIR" />
-          <EntitySet Name="RAPPORT" EntityType="GSB2_GroupeMLKModel.RAPPORT" />
-          <EntitySet Name="Region" EntityType="GSB2_GroupeMLKModel.Region" />
-          <EntitySet Name="Secteur" EntityType="GSB2_GroupeMLKModel.Secteur" />
-          <EntitySet Name="SPECIALITE" EntityType="GSB2_GroupeMLKModel.SPECIALITE" />
-          <EntitySet Name="Visiteur" EntityType="GSB2_GroupeMLKModel.Visiteur" />
-          <AssociationSet Name="FK__fichefrai__idEta__5629CD9C" Association="GSB2_GroupeMLKModel.FK__fichefrai__idEta__5629CD9C">
-            <End Role="Etat" EntitySet="Etat" />
-            <End Role="fichefrais" EntitySet="fichefrais" />
-          </AssociationSet>
-          <AssociationSet Name="medicament_fk" Association="GSB2_GroupeMLKModel.medicament_fk">
-            <End Role="FAMILLE" EntitySet="FAMILLE" />
-            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
-          </AssociationSet>
-          <AssociationSet Name="FK__fichefrai__idVis__571DF1D5" Association="GSB2_GroupeMLKModel.FK__fichefrai__idVis__571DF1D5">
-            <End Role="Visiteur" EntitySet="Visiteur" />
-            <End Role="fichefrais" EntitySet="fichefrais" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LigneFraisForfai__5CD6CB2B" Association="GSB2_GroupeMLKModel.FK__LigneFraisForfai__5CD6CB2B">
-            <End Role="fichefrais" EntitySet="fichefrais" />
-            <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LigneFraisHorsFo__656C112C" Association="GSB2_GroupeMLKModel.FK__LigneFraisHorsFo__656C112C">
-            <End Role="fichefrais" EntitySet="fichefrais" />
-            <End Role="LigneFraisHorsForfait" EntitySet="LigneFraisHorsForfait" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LigneFrai__idFra__5DCAEF64" Association="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64">
-            <End Role="FraisForfait" EntitySet="FraisForfait" />
-            <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Laboratoire" Association="GSB2_GroupeMLKModel.FK_Laboratoire">
-            <End Role="Laboratoire" EntitySet="Laboratoire" />
-            <End Role="Visiteur" EntitySet="Visiteur" />
-          </AssociationSet>
-          <AssociationSet Name="medecin_fk" Association="GSB2_GroupeMLKModel.medecin_fk">
-            <End Role="SPECIALITE" EntitySet="SPECIALITE" />
-            <End Role="MEDECIN" EntitySet="MEDECIN" />
-          </AssociationSet>
-          <AssociationSet Name="rapport_fk2" Association="GSB2_GroupeMLKModel.rapport_fk2">
-            <End Role="MEDECIN" EntitySet="MEDECIN" />
-            <End Role="RAPPORT" EntitySet="RAPPORT" />
-          </AssociationSet>
-          <AssociationSet Name="offrir_fk2" Association="GSB2_GroupeMLKModel.offrir_fk2">
-            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
-            <End Role="OFFRIR" EntitySet="OFFRIR" />
-          </AssociationSet>
-          <AssociationSet Name="rapport_fk3" Association="GSB2_GroupeMLKModel.rapport_fk3">
-            <End Role="MOTIF" EntitySet="MOTIF" />
-            <End Role="RAPPORT" EntitySet="RAPPORT" />
-          </AssociationSet>
-          <AssociationSet Name="offrir_fk1" Association="GSB2_GroupeMLKModel.offrir_fk1">
-            <End Role="RAPPORT" EntitySet="RAPPORT" />
-            <End Role="OFFRIR" EntitySet="OFFRIR" />
-          </AssociationSet>
-          <AssociationSet Name="rapport_fk1" Association="GSB2_GroupeMLKModel.rapport_fk1">
-            <End Role="Visiteur" EntitySet="Visiteur" />
-            <End Role="RAPPORT" EntitySet="RAPPORT" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SECTEUR" Association="GSB2_GroupeMLKModel.FK_SECTEUR">
-            <End Role="Secteur" EntitySet="Secteur" />
-            <End Role="Region" EntitySet="Region" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VISITEUR" Association="GSB2_GroupeMLKModel.FK_VISITEUR">
-            <End Role="Visiteur" EntitySet="Visiteur" />
-            <End Role="Region" EntitySet="Region" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VISITEURSECTEUR" Association="GSB2_GroupeMLKModel.FK_VISITEURSECTEUR">
-            <End Role="Visiteur" EntitySet="Visiteur" />
-            <End Role="Secteur" EntitySet="Secteur" />
-          </AssociationSet>
-          <AssociationSet Name="Travailler" Association="GSB2_GroupeMLKModel.Travailler">
-            <End Role="Region" EntitySet="Region" />
-            <End Role="Visiteur" EntitySet="Visiteur" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="GSB_GroupeMLKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Etat">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="id" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="libelle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="fichefrais" Relationship="GSB2_GroupeMLKModel.FK__fichefrai__idEta__5629CD9C" FromRole="Etat" ToRole="fichefrais" />
+          <NavigationProperty Name="fichefrais" Relationship="Self.FK__fichefrai__idEta__5629CD9C" FromRole="Etat" ToRole="fichefrais" />
         </EntityType>
         <EntityType Name="FAMILLE">
           <Key>
             <PropertyRef Name="idFamille" />
           </Key>
-          <Property Name="idFamille" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="libFamille" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="MEDICAMENT" Relationship="GSB2_GroupeMLKModel.medicament_fk" FromRole="FAMILLE" ToRole="MEDICAMENT" />
+          <Property Name="idFamille" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="libFamille" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MEDICAMENT" Relationship="Self.medicament_fk" FromRole="FAMILLE" ToRole="MEDICAMENT" />
         </EntityType>
         <EntityType Name="fichefrais">
           <Key>
             <PropertyRef Name="idVisiteur" />
             <PropertyRef Name="mois" />
           </Key>
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="mois" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="idVisiteur" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="mois" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="nbJustificatifs" Type="Int32" />
           <Property Name="montantValide" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="dateModif" Type="DateTime" Precision="0" />
           <Property Name="idEtat" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Etat" Relationship="GSB2_GroupeMLKModel.FK__fichefrai__idEta__5629CD9C" FromRole="fichefrais" ToRole="Etat" />
-          <NavigationProperty Name="Visiteur" Relationship="GSB2_GroupeMLKModel.FK__fichefrai__idVis__571DF1D5" FromRole="fichefrais" ToRole="Visiteur" />
-          <NavigationProperty Name="LigneFraisForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFraisForfai__5CD6CB2B" FromRole="fichefrais" ToRole="LigneFraisForfait" />
-          <NavigationProperty Name="LigneFraisHorsForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFraisHorsFo__656C112C" FromRole="fichefrais" ToRole="LigneFraisHorsForfait" />
+          <NavigationProperty Name="Etat" Relationship="Self.FK__fichefrai__idEta__5629CD9C" FromRole="fichefrais" ToRole="Etat" />
+          <NavigationProperty Name="Visiteur" Relationship="Self.FK__fichefrai__idVis__571DF1D5" FromRole="fichefrais" ToRole="Visiteur" />
+          <NavigationProperty Name="LigneFraisForfait" Relationship="Self.FK__LigneFraisForfai__5CD6CB2B" FromRole="fichefrais" ToRole="LigneFraisForfait" />
+          <NavigationProperty Name="LigneFraisHorsForfait" Relationship="Self.FK__LigneFraisHorsFo__656C112C" FromRole="fichefrais" ToRole="LigneFraisHorsForfait" />
         </EntityType>
         <EntityType Name="FraisForfait">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="id" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
-          <NavigationProperty Name="LigneFraisForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
+          <NavigationProperty Name="LigneFraisForfait" Relationship="Self.FK__LigneFrai__idFra__5DCAEF64" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -613,7 +528,7 @@
           </Key>
           <Property Name="idLabo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomLabo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Visiteur" Relationship="GSB2_GroupeMLKModel.FK_Laboratoire" FromRole="Laboratoire" ToRole="Visiteur" />
+          <NavigationProperty Name="Visiteur" Relationship="Self.FK_Laboratoire" FromRole="Laboratoire" ToRole="Visiteur" />
         </EntityType>
         <EntityType Name="LigneFraisForfait">
           <Key>
@@ -621,51 +536,51 @@
             <PropertyRef Name="mois" />
             <PropertyRef Name="idFraisForfait" />
           </Key>
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="mois" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
-          <Property Name="idFraisForfait" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="idVisiteur" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="mois" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="idFraisForfait" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="quantite" Type="Int32" />
-          <NavigationProperty Name="fichefrais" Relationship="GSB2_GroupeMLKModel.FK__LigneFraisForfai__5CD6CB2B" FromRole="LigneFraisForfait" ToRole="fichefrais" />
-          <NavigationProperty Name="FraisForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64" FromRole="LigneFraisForfait" ToRole="FraisForfait" />
+          <NavigationProperty Name="fichefrais" Relationship="Self.FK__LigneFraisForfai__5CD6CB2B" FromRole="LigneFraisForfait" ToRole="fichefrais" />
+          <NavigationProperty Name="FraisForfait" Relationship="Self.FK__LigneFrai__idFra__5DCAEF64" FromRole="LigneFraisForfait" ToRole="FraisForfait" />
         </EntityType>
         <EntityType Name="LigneFraisHorsForfait">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="mois" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="idVisiteur" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="mois" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="date" Type="DateTime" Precision="0" />
           <Property Name="montant" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="fichefrais" Relationship="GSB2_GroupeMLKModel.FK__LigneFraisHorsFo__656C112C" FromRole="LigneFraisHorsForfait" ToRole="fichefrais" />
+          <NavigationProperty Name="fichefrais" Relationship="Self.FK__LigneFraisHorsFo__656C112C" FromRole="LigneFraisHorsForfait" ToRole="fichefrais" />
         </EntityType>
         <EntityType Name="MEDECIN">
           <Key>
             <PropertyRef Name="idMedecin" />
           </Key>
           <Property Name="idMedecin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="prenom" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="adresse" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="nom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prenom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresse" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="idSpecialite" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
           <Property Name="departement" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="SPECIALITE" Relationship="GSB2_GroupeMLKModel.medecin_fk" FromRole="MEDECIN" ToRole="SPECIALITE" />
-          <NavigationProperty Name="RAPPORT" Relationship="GSB2_GroupeMLKModel.rapport_fk2" FromRole="MEDECIN" ToRole="RAPPORT" />
+          <NavigationProperty Name="SPECIALITE" Relationship="Self.medecin_fk" FromRole="MEDECIN" ToRole="SPECIALITE" />
+          <NavigationProperty Name="RAPPORT" Relationship="Self.rapport_fk2" FromRole="MEDECIN" ToRole="RAPPORT" />
         </EntityType>
         <EntityType Name="MEDICAMENT">
           <Key>
             <PropertyRef Name="idMedicament" />
           </Key>
-          <Property Name="idMedicament" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
-          <Property Name="nomCommercial" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="idFamille" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="composition" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
-          <Property Name="effets" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
-          <Property Name="contreIndications" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="FAMILLE" Relationship="GSB2_GroupeMLKModel.medicament_fk" FromRole="MEDICAMENT" ToRole="FAMILLE" />
-          <NavigationProperty Name="OFFRIR" Relationship="GSB2_GroupeMLKModel.offrir_fk2" FromRole="MEDICAMENT" ToRole="OFFRIR" />
+          <Property Name="idMedicament" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nomCommercial" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idFamille" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="composition" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="effets" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contreIndications" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="FAMILLE" Relationship="Self.medicament_fk" FromRole="MEDICAMENT" ToRole="FAMILLE" />
+          <NavigationProperty Name="OFFRIR" Relationship="Self.offrir_fk2" FromRole="MEDICAMENT" ToRole="OFFRIR" />
         </EntityType>
         <EntityType Name="MOTIF">
           <Key>
@@ -673,7 +588,7 @@
           </Key>
           <Property Name="idMotif" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="libMotif" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="RAPPORT" Relationship="GSB2_GroupeMLKModel.rapport_fk3" FromRole="MOTIF" ToRole="RAPPORT" />
+          <NavigationProperty Name="RAPPORT" Relationship="Self.rapport_fk3" FromRole="MOTIF" ToRole="RAPPORT" />
         </EntityType>
         <EntityType Name="OFFRIR">
           <Key>
@@ -681,10 +596,10 @@
             <PropertyRef Name="idMedicament" />
           </Key>
           <Property Name="idRapport" Type="Int32" Nullable="false" />
-          <Property Name="idMedicament" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="idMedicament" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="quantite" Type="Int32" />
-          <NavigationProperty Name="MEDICAMENT" Relationship="GSB2_GroupeMLKModel.offrir_fk2" FromRole="OFFRIR" ToRole="MEDICAMENT" />
-          <NavigationProperty Name="RAPPORT" Relationship="GSB2_GroupeMLKModel.offrir_fk1" FromRole="OFFRIR" ToRole="RAPPORT" />
+          <NavigationProperty Name="MEDICAMENT" Relationship="Self.offrir_fk2" FromRole="OFFRIR" ToRole="MEDICAMENT" />
+          <NavigationProperty Name="RAPPORT" Relationship="Self.offrir_fk1" FromRole="OFFRIR" ToRole="RAPPORT" />
         </EntityType>
         <EntityType Name="RAPPORT">
           <Key>
@@ -694,12 +609,12 @@
           <Property Name="dateRapport" Type="DateTime" Precision="0" />
           <Property Name="idMotif" Type="Int32" />
           <Property Name="bilan" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="idVisiteur" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="idMedecin" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MEDECIN" Relationship="GSB2_GroupeMLKModel.rapport_fk2" FromRole="RAPPORT" ToRole="MEDECIN" />
-          <NavigationProperty Name="MOTIF" Relationship="GSB2_GroupeMLKModel.rapport_fk3" FromRole="RAPPORT" ToRole="MOTIF" />
-          <NavigationProperty Name="OFFRIR" Relationship="GSB2_GroupeMLKModel.offrir_fk1" FromRole="RAPPORT" ToRole="OFFRIR" />
-          <NavigationProperty Name="Visiteur" Relationship="GSB2_GroupeMLKModel.rapport_fk1" FromRole="RAPPORT" ToRole="Visiteur" />
+          <NavigationProperty Name="MEDECIN" Relationship="Self.rapport_fk2" FromRole="RAPPORT" ToRole="MEDECIN" />
+          <NavigationProperty Name="MOTIF" Relationship="Self.rapport_fk3" FromRole="RAPPORT" ToRole="MOTIF" />
+          <NavigationProperty Name="OFFRIR" Relationship="Self.offrir_fk1" FromRole="RAPPORT" ToRole="OFFRIR" />
+          <NavigationProperty Name="Visiteur" Relationship="Self.rapport_fk1" FromRole="RAPPORT" ToRole="Visiteur" />
         </EntityType>
         <EntityType Name="Region">
           <Key>
@@ -707,11 +622,11 @@
           </Key>
           <Property Name="idRegion" Type="Int32" Nullable="false" />
           <Property Name="libRegion" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="idVisiteur" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="idSecteur" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Secteur" Relationship="GSB2_GroupeMLKModel.FK_SECTEUR" FromRole="Region" ToRole="Secteur" />
-          <NavigationProperty Name="Visiteur" Relationship="GSB2_GroupeMLKModel.FK_VISITEUR" FromRole="Region" ToRole="Visiteur" />
-          <NavigationProperty Name="Visiteur1" Relationship="GSB2_GroupeMLKModel.Travailler" FromRole="Region" ToRole="Visiteur" />
+          <NavigationProperty Name="Secteur" Relationship="Self.FK_SECTEUR" FromRole="Region" ToRole="Secteur" />
+          <NavigationProperty Name="Visiteur" Relationship="Self.FK_VISITEUR" FromRole="Region" ToRole="Visiteur" />
+          <NavigationProperty Name="Visiteur1" Relationship="Self.Travailler" FromRole="Region" ToRole="Visiteur" />
         </EntityType>
         <EntityType Name="Secteur">
           <Key>
@@ -719,23 +634,23 @@
           </Key>
           <Property Name="idSecteur" Type="Int32" Nullable="false" />
           <Property Name="libSecteur" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Region" Relationship="GSB2_GroupeMLKModel.FK_SECTEUR" FromRole="Secteur" ToRole="Region" />
-          <NavigationProperty Name="Visiteur" Relationship="GSB2_GroupeMLKModel.FK_VISITEURSECTEUR" FromRole="Secteur" ToRole="Visiteur" />
+          <Property Name="idVisiteur" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_SECTEUR" FromRole="Secteur" ToRole="Region" />
+          <NavigationProperty Name="Visiteur" Relationship="Self.FK_VISITEURSECTEUR" FromRole="Secteur" ToRole="Visiteur" />
         </EntityType>
         <EntityType Name="SPECIALITE">
           <Key>
             <PropertyRef Name="idSpecialite" />
           </Key>
-          <Property Name="idSpecialite" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="libSpecialite" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="MEDECIN" Relationship="GSB2_GroupeMLKModel.medecin_fk" FromRole="SPECIALITE" ToRole="MEDECIN" />
+          <Property Name="idSpecialite" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="libSpecialite" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MEDECIN" Relationship="Self.medecin_fk" FromRole="SPECIALITE" ToRole="MEDECIN" />
         </EntityType>
         <EntityType Name="Visiteur">
           <Key>
             <PropertyRef Name="idVisiteur" />
           </Key>
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="idVisiteur" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="idLabo" Type="Int32" Nullable="false" />
           <Property Name="nom" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="prenom" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
@@ -743,18 +658,18 @@
           <Property Name="cp" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Name="ville" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Name="dateEmbauche" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="identifiant" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="fichefrais" Relationship="GSB2_GroupeMLKModel.FK__fichefrai__idVis__571DF1D5" FromRole="Visiteur" ToRole="fichefrais" />
-          <NavigationProperty Name="Laboratoire" Relationship="GSB2_GroupeMLKModel.FK_Laboratoire" FromRole="Visiteur" ToRole="Laboratoire" />
-          <NavigationProperty Name="RAPPORT" Relationship="GSB2_GroupeMLKModel.rapport_fk1" FromRole="Visiteur" ToRole="RAPPORT" />
-          <NavigationProperty Name="Region" Relationship="GSB2_GroupeMLKModel.FK_VISITEUR" FromRole="Visiteur" ToRole="Region" />
-          <NavigationProperty Name="Secteur" Relationship="GSB2_GroupeMLKModel.FK_VISITEURSECTEUR" FromRole="Visiteur" ToRole="Secteur" />
-          <NavigationProperty Name="Region1" Relationship="GSB2_GroupeMLKModel.Travailler" FromRole="Visiteur" ToRole="Region" />
+          <Property Name="identifiant" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="fichefrais" Relationship="Self.FK__fichefrai__idVis__571DF1D5" FromRole="Visiteur" ToRole="fichefrais" />
+          <NavigationProperty Name="Laboratoire" Relationship="Self.FK_Laboratoire" FromRole="Visiteur" ToRole="Laboratoire" />
+          <NavigationProperty Name="RAPPORT" Relationship="Self.rapport_fk1" FromRole="Visiteur" ToRole="RAPPORT" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_VISITEUR" FromRole="Visiteur" ToRole="Region" />
+          <NavigationProperty Name="Secteur" Relationship="Self.FK_VISITEURSECTEUR" FromRole="Visiteur" ToRole="Secteur" />
+          <NavigationProperty Name="Region1" Relationship="Self.Travailler" FromRole="Visiteur" ToRole="Region" />
         </EntityType>
         <Association Name="FK__fichefrai__idEta__5629CD9C">
-          <End Type="GSB2_GroupeMLKModel.Etat" Role="Etat" Multiplicity="0..1" />
-          <End Type="GSB2_GroupeMLKModel.fichefrais" Role="fichefrais" Multiplicity="*" />
+          <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
+          <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Etat">
               <PropertyRef Name="id" />
@@ -765,8 +680,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="medicament_fk">
-          <End Type="GSB2_GroupeMLKModel.FAMILLE" Role="FAMILLE" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.MEDICAMENT" Role="MEDICAMENT" Multiplicity="*" />
+          <End Role="FAMILLE" Type="Self.FAMILLE" Multiplicity="1" />
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FAMILLE">
               <PropertyRef Name="idFamille" />
@@ -777,8 +692,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__fichefrai__idVis__571DF1D5">
-          <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.fichefrais" Role="fichefrais" Multiplicity="*" />
+          <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="1" />
+          <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Visiteur">
               <PropertyRef Name="idVisiteur" />
@@ -789,8 +704,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__LigneFraisForfai__5CD6CB2B">
-          <End Type="GSB2_GroupeMLKModel.fichefrais" Role="fichefrais" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.LigneFraisForfait" Role="LigneFraisForfait" Multiplicity="*" />
+          <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="1" />
+          <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="fichefrais">
               <PropertyRef Name="idVisiteur" />
@@ -803,8 +718,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__LigneFraisHorsFo__656C112C">
-          <End Type="GSB2_GroupeMLKModel.fichefrais" Role="fichefrais" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.LigneFraisHorsForfait" Role="LigneFraisHorsForfait" Multiplicity="*" />
+          <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="1" />
+          <End Role="LigneFraisHorsForfait" Type="Self.LigneFraisHorsForfait" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="fichefrais">
               <PropertyRef Name="idVisiteur" />
@@ -817,8 +732,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__LigneFrai__idFra__5DCAEF64">
-          <End Type="GSB2_GroupeMLKModel.FraisForfait" Role="FraisForfait" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.LigneFraisForfait" Role="LigneFraisForfait" Multiplicity="*" />
+          <End Role="FraisForfait" Type="Self.FraisForfait" Multiplicity="1" />
+          <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FraisForfait">
               <PropertyRef Name="id" />
@@ -829,8 +744,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Laboratoire">
-          <End Type="GSB2_GroupeMLKModel.Laboratoire" Role="Laboratoire" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="*" />
+          <End Role="Laboratoire" Type="Self.Laboratoire" Multiplicity="1" />
+          <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Laboratoire">
               <PropertyRef Name="idLabo" />
@@ -841,8 +756,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="medecin_fk">
-          <End Type="GSB2_GroupeMLKModel.SPECIALITE" Role="SPECIALITE" Multiplicity="0..1" />
-          <End Type="GSB2_GroupeMLKModel.MEDECIN" Role="MEDECIN" Multiplicity="*" />
+          <End Role="SPECIALITE" Type="Self.SPECIALITE" Multiplicity="0..1" />
+          <End Role="MEDECIN" Type="Self.MEDECIN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SPECIALITE">
               <PropertyRef Name="idSpecialite" />
@@ -853,8 +768,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="rapport_fk2">
-          <End Type="GSB2_GroupeMLKModel.MEDECIN" Role="MEDECIN" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.RAPPORT" Role="RAPPORT" Multiplicity="*" />
+          <End Role="MEDECIN" Type="Self.MEDECIN" Multiplicity="1" />
+          <End Role="RAPPORT" Type="Self.RAPPORT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MEDECIN">
               <PropertyRef Name="idMedecin" />
@@ -865,8 +780,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="offrir_fk2">
-          <End Type="GSB2_GroupeMLKModel.MEDICAMENT" Role="MEDICAMENT" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.OFFRIR" Role="OFFRIR" Multiplicity="*" />
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="1" />
+          <End Role="OFFRIR" Type="Self.OFFRIR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MEDICAMENT">
               <PropertyRef Name="idMedicament" />
@@ -877,8 +792,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="rapport_fk3">
-          <End Type="GSB2_GroupeMLKModel.MOTIF" Role="MOTIF" Multiplicity="0..1" />
-          <End Type="GSB2_GroupeMLKModel.RAPPORT" Role="RAPPORT" Multiplicity="*" />
+          <End Role="MOTIF" Type="Self.MOTIF" Multiplicity="0..1" />
+          <End Role="RAPPORT" Type="Self.RAPPORT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MOTIF">
               <PropertyRef Name="idMotif" />
@@ -889,8 +804,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="offrir_fk1">
-          <End Type="GSB2_GroupeMLKModel.RAPPORT" Role="RAPPORT" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.OFFRIR" Role="OFFRIR" Multiplicity="*" />
+          <End Role="RAPPORT" Type="Self.RAPPORT" Multiplicity="1" />
+          <End Role="OFFRIR" Type="Self.OFFRIR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RAPPORT">
               <PropertyRef Name="idRapport" />
@@ -901,8 +816,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="rapport_fk1">
-          <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.RAPPORT" Role="RAPPORT" Multiplicity="*" />
+          <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="1" />
+          <End Role="RAPPORT" Type="Self.RAPPORT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Visiteur">
               <PropertyRef Name="idVisiteur" />
@@ -913,8 +828,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SECTEUR">
-          <End Type="GSB2_GroupeMLKModel.Secteur" Role="Secteur" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.Region" Role="Region" Multiplicity="*" />
+          <End Role="Secteur" Type="Self.Secteur" Multiplicity="1" />
+          <End Role="Region" Type="Self.Region" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Secteur">
               <PropertyRef Name="idSecteur" />
@@ -925,8 +840,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VISITEUR">
-          <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.Region" Role="Region" Multiplicity="*" />
+          <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="1" />
+          <End Role="Region" Type="Self.Region" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Visiteur">
               <PropertyRef Name="idVisiteur" />
@@ -937,8 +852,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VISITEURSECTEUR">
-          <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.Secteur" Role="Secteur" Multiplicity="*" />
+          <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="1" />
+          <End Role="Secteur" Type="Self.Secteur" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Visiteur">
               <PropertyRef Name="idVisiteur" />
@@ -949,185 +864,271 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Travailler">
-          <End Type="GSB2_GroupeMLKModel.Region" Role="Region" Multiplicity="*" />
-          <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="*" />
+          <End Role="Region" Type="Self.Region" Multiplicity="*" />
+          <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="*" />
         </Association>
+        <EntityContainer Name="GSB_GroupeMLKEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Etat" EntityType="Self.Etat" />
+          <EntitySet Name="FAMILLE" EntityType="Self.FAMILLE" />
+          <EntitySet Name="fichefrais" EntityType="Self.fichefrais" />
+          <EntitySet Name="FraisForfait" EntityType="Self.FraisForfait" />
+          <EntitySet Name="Laboratoire" EntityType="Self.Laboratoire" />
+          <EntitySet Name="LigneFraisForfait" EntityType="Self.LigneFraisForfait" />
+          <EntitySet Name="LigneFraisHorsForfait" EntityType="Self.LigneFraisHorsForfait" />
+          <EntitySet Name="MEDECIN" EntityType="Self.MEDECIN" />
+          <EntitySet Name="MEDICAMENT" EntityType="Self.MEDICAMENT" />
+          <EntitySet Name="MOTIF" EntityType="Self.MOTIF" />
+          <EntitySet Name="OFFRIR" EntityType="Self.OFFRIR" />
+          <EntitySet Name="RAPPORT" EntityType="Self.RAPPORT" />
+          <EntitySet Name="Region" EntityType="Self.Region" />
+          <EntitySet Name="Secteur" EntityType="Self.Secteur" />
+          <EntitySet Name="SPECIALITE" EntityType="Self.SPECIALITE" />
+          <EntitySet Name="Visiteur" EntityType="Self.Visiteur" />
+          <AssociationSet Name="FK__fichefrai__idEta__5629CD9C" Association="Self.FK__fichefrai__idEta__5629CD9C">
+            <End Role="Etat" EntitySet="Etat" />
+            <End Role="fichefrais" EntitySet="fichefrais" />
+          </AssociationSet>
+          <AssociationSet Name="medicament_fk" Association="Self.medicament_fk">
+            <End Role="FAMILLE" EntitySet="FAMILLE" />
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__fichefrai__idVis__571DF1D5" Association="Self.FK__fichefrai__idVis__571DF1D5">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="fichefrais" EntitySet="fichefrais" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LigneFraisForfai__5CD6CB2B" Association="Self.FK__LigneFraisForfai__5CD6CB2B">
+            <End Role="fichefrais" EntitySet="fichefrais" />
+            <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LigneFraisHorsFo__656C112C" Association="Self.FK__LigneFraisHorsFo__656C112C">
+            <End Role="fichefrais" EntitySet="fichefrais" />
+            <End Role="LigneFraisHorsForfait" EntitySet="LigneFraisHorsForfait" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LigneFrai__idFra__5DCAEF64" Association="Self.FK__LigneFrai__idFra__5DCAEF64">
+            <End Role="FraisForfait" EntitySet="FraisForfait" />
+            <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Laboratoire" Association="Self.FK_Laboratoire">
+            <End Role="Laboratoire" EntitySet="Laboratoire" />
+            <End Role="Visiteur" EntitySet="Visiteur" />
+          </AssociationSet>
+          <AssociationSet Name="medecin_fk" Association="Self.medecin_fk">
+            <End Role="SPECIALITE" EntitySet="SPECIALITE" />
+            <End Role="MEDECIN" EntitySet="MEDECIN" />
+          </AssociationSet>
+          <AssociationSet Name="rapport_fk2" Association="Self.rapport_fk2">
+            <End Role="MEDECIN" EntitySet="MEDECIN" />
+            <End Role="RAPPORT" EntitySet="RAPPORT" />
+          </AssociationSet>
+          <AssociationSet Name="offrir_fk2" Association="Self.offrir_fk2">
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+            <End Role="OFFRIR" EntitySet="OFFRIR" />
+          </AssociationSet>
+          <AssociationSet Name="rapport_fk3" Association="Self.rapport_fk3">
+            <End Role="MOTIF" EntitySet="MOTIF" />
+            <End Role="RAPPORT" EntitySet="RAPPORT" />
+          </AssociationSet>
+          <AssociationSet Name="offrir_fk1" Association="Self.offrir_fk1">
+            <End Role="RAPPORT" EntitySet="RAPPORT" />
+            <End Role="OFFRIR" EntitySet="OFFRIR" />
+          </AssociationSet>
+          <AssociationSet Name="rapport_fk1" Association="Self.rapport_fk1">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="RAPPORT" EntitySet="RAPPORT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SECTEUR" Association="Self.FK_SECTEUR">
+            <End Role="Secteur" EntitySet="Secteur" />
+            <End Role="Region" EntitySet="Region" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISITEUR" Association="Self.FK_VISITEUR">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="Region" EntitySet="Region" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISITEURSECTEUR" Association="Self.FK_VISITEURSECTEUR">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="Secteur" EntitySet="Secteur" />
+          </AssociationSet>
+          <AssociationSet Name="Travailler" Association="Self.Travailler">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Visiteur" EntitySet="Visiteur" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GSB2_GroupeMLKModelStoreContainer" CdmEntityContainer="GSB2_GroupeMLKEntities">
+        <EntityContainerMapping StorageEntityContainer="GSB_GroupeMLKModelStoreContainer" CdmEntityContainer="GSB_GroupeMLKEntities">
           <EntitySetMapping Name="Etat">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.Etat">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.Etat">
               <MappingFragment StoreEntitySet="Etat">
-                <ScalarProperty Name="libelle" ColumnName="libelle" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="libelle" ColumnName="libelle" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FAMILLE">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.FAMILLE">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.FAMILLE">
               <MappingFragment StoreEntitySet="FAMILLE">
-                <ScalarProperty Name="libFamille" ColumnName="libFamille" />
                 <ScalarProperty Name="idFamille" ColumnName="idFamille" />
+                <ScalarProperty Name="libFamille" ColumnName="libFamille" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="fichefrais">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.fichefrais">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.fichefrais">
               <MappingFragment StoreEntitySet="fichefrais">
-                <ScalarProperty Name="idEtat" ColumnName="idEtat" />
-                <ScalarProperty Name="dateModif" ColumnName="dateModif" />
-                <ScalarProperty Name="montantValide" ColumnName="montantValide" />
-                <ScalarProperty Name="nbJustificatifs" ColumnName="nbJustificatifs" />
-                <ScalarProperty Name="mois" ColumnName="mois" />
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+                <ScalarProperty Name="mois" ColumnName="mois" />
+                <ScalarProperty Name="nbJustificatifs" ColumnName="nbJustificatifs" />
+                <ScalarProperty Name="montantValide" ColumnName="montantValide" />
+                <ScalarProperty Name="dateModif" ColumnName="dateModif" />
+                <ScalarProperty Name="idEtat" ColumnName="idEtat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FraisForfait">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.FraisForfait">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.FraisForfait">
               <MappingFragment StoreEntitySet="FraisForfait">
-                <ScalarProperty Name="montant" ColumnName="montant" />
-                <ScalarProperty Name="libelle" ColumnName="libelle" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="libelle" ColumnName="libelle" />
+                <ScalarProperty Name="montant" ColumnName="montant" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Laboratoire">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.Laboratoire">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.Laboratoire">
               <MappingFragment StoreEntitySet="Laboratoire">
-                <ScalarProperty Name="nomLabo" ColumnName="nomLabo" />
                 <ScalarProperty Name="idLabo" ColumnName="idLabo" />
+                <ScalarProperty Name="nomLabo" ColumnName="nomLabo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LigneFraisForfait">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.LigneFraisForfait">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.LigneFraisForfait">
               <MappingFragment StoreEntitySet="LigneFraisForfait">
-                <ScalarProperty Name="quantite" ColumnName="quantite" />
-                <ScalarProperty Name="idFraisForfait" ColumnName="idFraisForfait" />
-                <ScalarProperty Name="mois" ColumnName="mois" />
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+                <ScalarProperty Name="mois" ColumnName="mois" />
+                <ScalarProperty Name="idFraisForfait" ColumnName="idFraisForfait" />
+                <ScalarProperty Name="quantite" ColumnName="quantite" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LigneFraisHorsForfait">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.LigneFraisHorsForfait">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.LigneFraisHorsForfait">
               <MappingFragment StoreEntitySet="LigneFraisHorsForfait">
-                <ScalarProperty Name="montant" ColumnName="montant" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="libelle" ColumnName="libelle" />
-                <ScalarProperty Name="mois" ColumnName="mois" />
-                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+                <ScalarProperty Name="mois" ColumnName="mois" />
+                <ScalarProperty Name="libelle" ColumnName="libelle" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="montant" ColumnName="montant" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MEDECIN">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.MEDECIN">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.MEDECIN">
               <MappingFragment StoreEntitySet="MEDECIN">
-                <ScalarProperty Name="departement" ColumnName="departement" />
-                <ScalarProperty Name="idSpecialite" ColumnName="idSpecialite" />
-                <ScalarProperty Name="tel" ColumnName="tel" />
-                <ScalarProperty Name="adresse" ColumnName="adresse" />
-                <ScalarProperty Name="prenom" ColumnName="prenom" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
                 <ScalarProperty Name="idMedecin" ColumnName="idMedecin" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="idSpecialite" ColumnName="idSpecialite" />
+                <ScalarProperty Name="departement" ColumnName="departement" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MEDICAMENT">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.MEDICAMENT">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.MEDICAMENT">
               <MappingFragment StoreEntitySet="MEDICAMENT">
-                <ScalarProperty Name="contreIndications" ColumnName="contreIndications" />
-                <ScalarProperty Name="effets" ColumnName="effets" />
-                <ScalarProperty Name="composition" ColumnName="composition" />
-                <ScalarProperty Name="idFamille" ColumnName="idFamille" />
-                <ScalarProperty Name="nomCommercial" ColumnName="nomCommercial" />
                 <ScalarProperty Name="idMedicament" ColumnName="idMedicament" />
+                <ScalarProperty Name="nomCommercial" ColumnName="nomCommercial" />
+                <ScalarProperty Name="idFamille" ColumnName="idFamille" />
+                <ScalarProperty Name="composition" ColumnName="composition" />
+                <ScalarProperty Name="effets" ColumnName="effets" />
+                <ScalarProperty Name="contreIndications" ColumnName="contreIndications" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MOTIF">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.MOTIF">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.MOTIF">
               <MappingFragment StoreEntitySet="MOTIF">
-                <ScalarProperty Name="libMotif" ColumnName="libMotif" />
                 <ScalarProperty Name="idMotif" ColumnName="idMotif" />
+                <ScalarProperty Name="libMotif" ColumnName="libMotif" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OFFRIR">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.OFFRIR">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.OFFRIR">
               <MappingFragment StoreEntitySet="OFFRIR">
-                <ScalarProperty Name="quantite" ColumnName="quantite" />
-                <ScalarProperty Name="idMedicament" ColumnName="idMedicament" />
                 <ScalarProperty Name="idRapport" ColumnName="idRapport" />
+                <ScalarProperty Name="idMedicament" ColumnName="idMedicament" />
+                <ScalarProperty Name="quantite" ColumnName="quantite" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RAPPORT">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.RAPPORT">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.RAPPORT">
               <MappingFragment StoreEntitySet="RAPPORT">
-                <ScalarProperty Name="idMedecin" ColumnName="idMedecin" />
-                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
-                <ScalarProperty Name="bilan" ColumnName="bilan" />
-                <ScalarProperty Name="idMotif" ColumnName="idMotif" />
-                <ScalarProperty Name="dateRapport" ColumnName="dateRapport" />
                 <ScalarProperty Name="idRapport" ColumnName="idRapport" />
+                <ScalarProperty Name="dateRapport" ColumnName="dateRapport" />
+                <ScalarProperty Name="idMotif" ColumnName="idMotif" />
+                <ScalarProperty Name="bilan" ColumnName="bilan" />
+                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+                <ScalarProperty Name="idMedecin" ColumnName="idMedecin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Region">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.Region">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.Region">
               <MappingFragment StoreEntitySet="Region">
-                <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
-                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
-                <ScalarProperty Name="libRegion" ColumnName="libRegion" />
                 <ScalarProperty Name="idRegion" ColumnName="idRegion" />
+                <ScalarProperty Name="libRegion" ColumnName="libRegion" />
+                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+                <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Secteur">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.Secteur">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.Secteur">
               <MappingFragment StoreEntitySet="Secteur">
-                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
-                <ScalarProperty Name="libSecteur" ColumnName="libSecteur" />
                 <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
+                <ScalarProperty Name="libSecteur" ColumnName="libSecteur" />
+                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SPECIALITE">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.SPECIALITE">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.SPECIALITE">
               <MappingFragment StoreEntitySet="SPECIALITE">
-                <ScalarProperty Name="libSpecialite" ColumnName="libSpecialite" />
                 <ScalarProperty Name="idSpecialite" ColumnName="idSpecialite" />
+                <ScalarProperty Name="libSpecialite" ColumnName="libSpecialite" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Visiteur">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.Visiteur">
+            <EntityTypeMapping TypeName="GSB_GroupeMLKModel.Visiteur">
               <MappingFragment StoreEntitySet="Visiteur">
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="identifiant" ColumnName="identifiant" />
-                <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />
-                <ScalarProperty Name="ville" ColumnName="ville" />
-                <ScalarProperty Name="cp" ColumnName="cp" />
-                <ScalarProperty Name="rue" ColumnName="rue" />
-                <ScalarProperty Name="prenom" ColumnName="prenom" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
-                <ScalarProperty Name="idLabo" ColumnName="idLabo" />
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+                <ScalarProperty Name="idLabo" ColumnName="idLabo" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="rue" ColumnName="rue" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />
+                <ScalarProperty Name="identifiant" ColumnName="identifiant" />
+                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Travailler" TypeName="GSB2_GroupeMLKModel.Travailler" StoreEntitySet="Travailler">
-            <EndProperty Name="Visiteur">
-              <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
-            </EndProperty>
+          <AssociationSetMapping Name="Travailler" TypeName="GSB_GroupeMLKModel.Travailler" StoreEntitySet="Travailler">
             <EndProperty Name="Region">
               <ScalarProperty Name="idRegion" ColumnName="idRegion" />
+            </EndProperty>
+            <EndProperty Name="Visiteur">
+              <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

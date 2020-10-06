@@ -22,8 +22,8 @@ namespace PPE3_MLK
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
-            string reponse = Modele.validConnexion(txtIdentifiant.Text.ToString(), txtMDP.Text.ToString());
-            lblMsg.Text = reponse;
+            //string reponse = Modele.validConnexion(txtIdentifiant.Text.ToString(), txtMDP.Text.ToString());
+            //lblMsg.Text = reponse;
             lblMsg.Visible = true;
         }
     }

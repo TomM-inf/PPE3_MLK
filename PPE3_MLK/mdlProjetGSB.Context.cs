@@ -13,10 +13,10 @@ namespace PPE3_MLK
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GSB2_GroupeMLKEntities : DbContext
+    public partial class GSB_GroupeMLKEntities : DbContext
     {
-        public GSB2_GroupeMLKEntities()
-            : base("name=GSB2_GroupeMLKEntities")
+        public GSB_GroupeMLKEntities()
+            : base("name=GSB_GroupeMLKEntities")
         {
         }
     
