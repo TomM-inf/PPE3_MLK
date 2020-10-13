@@ -137,6 +137,7 @@
             this.btnModifValid.TabIndex = 10;
             this.btnModifValid.Text = "Modifier";
             this.btnModifValid.UseVisualStyleBackColor = true;
+            this.btnModifValid.Click += new System.EventHandler(this.BtnModifValid_Click);
             // 
             // frmCompte
             // 

@@ -23,5 +23,23 @@ namespace PPE3_MLK
             txtCP.Text = ((Visiteur)bsVisiteur.Current).cp.ToString();
             txtVille.Text = ((Visiteur)bsVisiteur.Current).ville.ToString();
         }
+
+        private void BtnModifValid_Click(object sender, EventArgs e)
+        {
+            if (btnModifValid.Text == "Modifier")
+            {
+                txtNom.ReadOnly = false;
+                txtPrenom.ReadOnly = false;
+                txtRue.ReadOnly = false;
+                txtCP.ReadOnly = false;
+                txtVille.ReadOnly = false;
+                btnModifValid.Text = "Valider";
+            }
+            else
+            {
+
+            }
+            
+        }
     }
 }
