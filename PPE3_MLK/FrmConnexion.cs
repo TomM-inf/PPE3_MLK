@@ -18,6 +18,7 @@ namespace PPE3_MLK
             InitializeComponent();
             lblTitre.ForeColor = System.Drawing.Color.FromArgb(46,28,142);
             lblMsg.Visible = false;
+            //préremplissage pour test A SUPPRIMER !!
             txtIdentifiant.Text = "dandre";
             txtMDP.Text = "oppg5";
         }
