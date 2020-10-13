@@ -46,12 +46,12 @@ namespace PPE3_MLK
                 else
                 {
                     this.DialogResult = DialogResult.OK;
-                    string nom = txtNom.Text;
-                    string prenom = txtPrenom.Text;
-                    string rue = txtRue.Text;
-                    string cp = txtCP.Text;
-                    string ville = txtVille.Text;
-                    //Modele.modifierVisiteur(nom, prenom, rue, cp, ville);
+                    string nom = txtNom.Text.Trim();
+                    string prenom = txtPrenom.Text.Trim();
+                    string rue = txtRue.Text.Trim();
+                    string cp = txtCP.Text.Trim();
+                    string ville = txtVille.Text.Trim();
+                    Modele.modifierVisiteur(nom, prenom, rue, cp, ville);
                 }
             }
             
