@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PPE3_MLK
 {
@@ -24,6 +25,17 @@ namespace PPE3_MLK
             string reponse = Modele.validConnexion(txtIdentifiant.Text, txtMDP.Text);
             lblMsg.Text = reponse;
             lblMsg.Visible = true;
+            if(reponse == "valide")
+            {
+                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+                t.Start();
+                this.Close();
+            }
+        }
+
+        public static void ThreadProc()
+        {
+            Application.Run(new FrmMenu());
         }
     }
 }
