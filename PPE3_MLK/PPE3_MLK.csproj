@@ -64,6 +64,11 @@
     <Compile Include="FGestionDesComptesRendus.Designer.cs">
       <DependentUpon>FGestionDesComptesRendus.cs</DependentUpon>
     </Compile>
+    <Compile Include="mdlProjetGSB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FChoixComptesRendus.resx">
@@ -84,6 +89,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="mdlProjetGSB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>mdlProjetGSB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="mdlProjetGSB.edmx.diagram">
+      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
