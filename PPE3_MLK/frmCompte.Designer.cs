@@ -40,6 +40,7 @@
             this.lblVille = new System.Windows.Forms.Label();
             this.txtVille = new System.Windows.Forms.TextBox();
             this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
+            this.btnModifValid = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@
             // 
             this.txtNom.Location = new System.Drawing.Point(95, 10);
             this.txtNom.Name = "txtNom";
+            this.txtNom.ReadOnly = true;
             this.txtNom.Size = new System.Drawing.Size(100, 20);
             this.txtNom.TabIndex = 3;
             // 
@@ -81,6 +83,7 @@
             // 
             this.txtPrenom.Location = new System.Drawing.Point(95, 36);
             this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.ReadOnly = true;
             this.txtPrenom.Size = new System.Drawing.Size(100, 20);
             this.txtPrenom.TabIndex = 4;
             // 
@@ -88,6 +91,7 @@
             // 
             this.txtCP.Location = new System.Drawing.Point(95, 88);
             this.txtCP.Name = "txtCP";
+            this.txtCP.ReadOnly = true;
             this.txtCP.Size = new System.Drawing.Size(100, 20);
             this.txtCP.TabIndex = 5;
             // 
@@ -104,6 +108,7 @@
             // 
             this.txtRue.Location = new System.Drawing.Point(95, 62);
             this.txtRue.Name = "txtRue";
+            this.txtRue.ReadOnly = true;
             this.txtRue.Size = new System.Drawing.Size(100, 20);
             this.txtRue.TabIndex = 7;
             // 
@@ -120,14 +125,25 @@
             // 
             this.txtVille.Location = new System.Drawing.Point(95, 114);
             this.txtVille.Name = "txtVille";
+            this.txtVille.ReadOnly = true;
             this.txtVille.Size = new System.Drawing.Size(100, 20);
             this.txtVille.TabIndex = 9;
+            // 
+            // btnModifValid
+            // 
+            this.btnModifValid.Location = new System.Drawing.Point(95, 141);
+            this.btnModifValid.Name = "btnModifValid";
+            this.btnModifValid.Size = new System.Drawing.Size(100, 23);
+            this.btnModifValid.TabIndex = 10;
+            this.btnModifValid.Text = "Modifier";
+            this.btnModifValid.UseVisualStyleBackColor = true;
             // 
             // frmCompte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 199);
+            this.Controls.Add(this.btnModifValid);
             this.Controls.Add(this.txtVille);
             this.Controls.Add(this.lblVille);
             this.Controls.Add(this.txtRue);
@@ -160,5 +176,6 @@
         private System.Windows.Forms.Label lblVille;
         private System.Windows.Forms.TextBox txtVille;
         private System.Windows.Forms.BindingSource bsVisiteur;
+        private System.Windows.Forms.Button btnModifValid;
     }
 }
