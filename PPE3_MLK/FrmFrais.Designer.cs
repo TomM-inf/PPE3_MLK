@@ -36,12 +36,12 @@
             this.btnModif = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dgv3 = new System.Windows.Forms.DataGridView();
-            this.dgv2 = new System.Windows.Forms.DataGridView();
-            this.txt2 = new System.Windows.Forms.TextBox();
-            this.txt1 = new System.Windows.Forms.TextBox();
+            this.txtTotalFrais = new System.Windows.Forms.TextBox();
+            this.txtTotalDate = new System.Windows.Forms.TextBox();
+            this.dgvAutresFrais = new System.Windows.Forms.DataGridView();
+            this.dgvFrais = new System.Windows.Forms.DataGridView();
+            this.txtDate = new System.Windows.Forms.TextBox();
+            this.txtIdVisiteur = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,12 +49,16 @@
             this.dgvListFicheFrais = new System.Windows.Forms.DataGridView();
             this.bsFicheFrais = new System.Windows.Forms.BindingSource(this.components);
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.bsFraisForfait = new System.Windows.Forms.BindingSource(this.components);
+            this.bsFraisHorsForfait = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAutresFrais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFicheFrais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFraisForfait)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFraisHorsForfait)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +95,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnQuitter);
             this.panel1.Controls.Add(this.dgvListFicheFrais);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(16, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(809, 503);
             this.panel1.TabIndex = 4;
@@ -109,12 +113,12 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.dgv3);
-            this.panel2.Controls.Add(this.dgv2);
-            this.panel2.Controls.Add(this.txt2);
-            this.panel2.Controls.Add(this.txt1);
+            this.panel2.Controls.Add(this.txtTotalFrais);
+            this.panel2.Controls.Add(this.txtTotalDate);
+            this.panel2.Controls.Add(this.dgvAutresFrais);
+            this.panel2.Controls.Add(this.dgvFrais);
+            this.panel2.Controls.Add(this.txtDate);
+            this.panel2.Controls.Add(this.txtIdVisiteur);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -132,53 +136,53 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Autres Frais";
             // 
-            // textBox4
+            // txtTotalFrais
             // 
-            this.textBox4.Location = new System.Drawing.Point(364, 453);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 8;
+            this.txtTotalFrais.Location = new System.Drawing.Point(364, 453);
+            this.txtTotalFrais.Name = "txtTotalFrais";
+            this.txtTotalFrais.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalFrais.TabIndex = 8;
             // 
-            // textBox3
+            // txtTotalDate
             // 
-            this.textBox3.Location = new System.Drawing.Point(258, 453);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtTotalDate.Location = new System.Drawing.Point(258, 453);
+            this.txtTotalDate.Name = "txtTotalDate";
+            this.txtTotalDate.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalDate.TabIndex = 7;
             // 
-            // dgv3
+            // dgvAutresFrais
             // 
-            this.dgv3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv3.Location = new System.Drawing.Point(27, 283);
-            this.dgv3.Name = "dgv3";
-            this.dgv3.Size = new System.Drawing.Size(433, 150);
-            this.dgv3.TabIndex = 6;
+            this.dgvAutresFrais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAutresFrais.Location = new System.Drawing.Point(27, 283);
+            this.dgvAutresFrais.Name = "dgvAutresFrais";
+            this.dgvAutresFrais.Size = new System.Drawing.Size(433, 150);
+            this.dgvAutresFrais.TabIndex = 6;
             // 
-            // dgv2
+            // dgvFrais
             // 
-            this.dgv2.AllowUserToAddRows = false;
-            this.dgv2.AllowUserToDeleteRows = false;
-            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv2.Location = new System.Drawing.Point(27, 100);
-            this.dgv2.Name = "dgv2";
-            this.dgv2.Size = new System.Drawing.Size(433, 150);
-            this.dgv2.TabIndex = 5;
+            this.dgvFrais.AllowUserToAddRows = false;
+            this.dgvFrais.AllowUserToDeleteRows = false;
+            this.dgvFrais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFrais.Location = new System.Drawing.Point(27, 100);
+            this.dgvFrais.Name = "dgvFrais";
+            this.dgvFrais.Size = new System.Drawing.Size(433, 150);
+            this.dgvFrais.TabIndex = 5;
             // 
-            // txt2
+            // txtDate
             // 
-            this.txt2.Location = new System.Drawing.Point(132, 62);
-            this.txt2.Name = "txt2";
-            this.txt2.Size = new System.Drawing.Size(100, 20);
-            this.txt2.TabIndex = 4;
-            this.txt2.TextChanged += new System.EventHandler(this.Txt2_TextChanged);
+            this.txtDate.Location = new System.Drawing.Point(132, 62);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(100, 20);
+            this.txtDate.TabIndex = 4;
+            this.txtDate.TextChanged += new System.EventHandler(this.Txt2_TextChanged);
             // 
-            // txt1
+            // txtIdVisiteur
             // 
-            this.txt1.Location = new System.Drawing.Point(132, 36);
-            this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(100, 20);
-            this.txt1.TabIndex = 3;
-            this.txt1.TextChanged += new System.EventHandler(this.txt1_TextChanged);
+            this.txtIdVisiteur.Location = new System.Drawing.Point(132, 36);
+            this.txtIdVisiteur.Name = "txtIdVisiteur";
+            this.txtIdVisiteur.Size = new System.Drawing.Size(100, 20);
+            this.txtIdVisiteur.TabIndex = 3;
+            this.txtIdVisiteur.TextChanged += new System.EventHandler(this.txt1_TextChanged);
             // 
             // label4
             // 
@@ -251,10 +255,12 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAutresFrais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFrais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListFicheFrais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFicheFrais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFraisForfait)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFraisHorsForfait)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,17 +275,19 @@
         private System.Windows.Forms.DataGridView dgvListFicheFrais;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txt1;
+        private System.Windows.Forms.TextBox txtIdVisiteur;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DataGridView dgv3;
-        private System.Windows.Forms.DataGridView dgv2;
+        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.TextBox txtTotalFrais;
+        private System.Windows.Forms.TextBox txtTotalDate;
+        private System.Windows.Forms.DataGridView dgvAutresFrais;
+        private System.Windows.Forms.DataGridView dgvFrais;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource bsFraisForfait;
+        private System.Windows.Forms.BindingSource bsFraisHorsForfait;
     }
 }

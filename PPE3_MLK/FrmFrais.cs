@@ -20,19 +20,24 @@ namespace PPE3_MLK
             btnModif.Visible = false;
             textBox5.Text = Modele.nomVisiteur();
 
-        }
-        //prendre exemple sur FCompositeurOeuvre de musicAtout
-        private void bsFicheFrais_CurrentChanged(object sender, EventArgs e)
-        {
-            //bsFicheFrais.DataSource =                A COMPLETER QUAND LA BDD SERA OK
+            bsFicheFrais.DataSource = Modele.ListeFiche();
             dgvListFicheFrais.DataSource = bsFicheFrais;
-            for (int i=0; i<dgvListFicheFrais.ColumnCount; i++)
+
+            for (int i = 0; i < dgvListFicheFrais.ColumnCount; i++)
             {
                 dgvListFicheFrais.Columns[i].Visible = false;
             }
 
+            dgvListFicheFrais.Columns["dateModif"].Visible = true;
+            dgvListFicheFrais.Columns["dateModif"].DisplayIndex = 1;
+            dgvListFicheFrais.Columns["dateModif"].HeaderText="Date de Modification";
+            dgvListFicheFrais.Columns["montantValide"].Visible = true;
+            dgvListFicheFrais.Columns["montantValide"].DisplayIndex = 0;
+            dgvListFicheFrais.Columns["montantValide"].HeaderText="Montant";
+            dgvListFicheFrais.Columns["idVisiteur"].Visible = false;
 
         }
+
 
         private void BtnQuitter_Click(object sender, EventArgs e)
         {
@@ -51,7 +56,7 @@ namespace PPE3_MLK
         private void Button1_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
-            panel2.Visible = true;
+            panel2.Visible = false;
             
         }
 
