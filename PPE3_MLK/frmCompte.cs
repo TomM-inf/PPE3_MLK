@@ -23,6 +23,14 @@ namespace PPE3_MLK
             txtRue.Text = ((Visiteur)bsVisiteur.Current).rue.ToString();
             txtCP.Text = ((Visiteur)bsVisiteur.Current).cp.ToString();
             txtVille.Text = ((Visiteur)bsVisiteur.Current).ville.ToString();
+            dgvRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region.ToList();
+            dgvRegion.RowHeadersVisible = false;
+            for (int i = 0; i < dgvRegion.ColumnCount; i++)
+            {
+                dgvRegion.Columns[i].Visible = false;
+            }
+            dgvRegion.Columns["libRegion"].Visible = true;
+            dgvRegion.ColumnHeadersVisible = false;
         }
 
         private void BtnModifValid_Click(object sender, EventArgs e)

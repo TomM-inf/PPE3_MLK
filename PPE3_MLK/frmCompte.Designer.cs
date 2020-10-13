@@ -41,7 +41,11 @@
             this.txtVille = new System.Windows.Forms.TextBox();
             this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             this.btnModifValid = new System.Windows.Forms.Button();
+            this.btnMdp = new System.Windows.Forms.Button();
+            this.lblResp = new System.Windows.Forms.Label();
+            this.dgvRegion = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegion)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNom
@@ -139,11 +143,43 @@
             this.btnModifValid.UseVisualStyleBackColor = true;
             this.btnModifValid.Click += new System.EventHandler(this.BtnModifValid_Click);
             // 
+            // btnMdp
+            // 
+            this.btnMdp.Location = new System.Drawing.Point(71, 170);
+            this.btnMdp.Name = "btnMdp";
+            this.btnMdp.Size = new System.Drawing.Size(148, 23);
+            this.btnMdp.TabIndex = 11;
+            this.btnMdp.Text = "Modification mot de passe";
+            this.btnMdp.UseVisualStyleBackColor = true;
+            // 
+            // lblResp
+            // 
+            this.lblResp.AutoSize = true;
+            this.lblResp.Location = new System.Drawing.Point(238, 13);
+            this.lblResp.Name = "lblResp";
+            this.lblResp.Size = new System.Drawing.Size(191, 13);
+            this.lblResp.TabIndex = 13;
+            this.lblResp.Text = "Région(s) dont vous êtes responsable :";
+            // 
+            // dgvRegion
+            // 
+            this.dgvRegion.AllowUserToAddRows = false;
+            this.dgvRegion.AllowUserToDeleteRows = false;
+            this.dgvRegion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegion.Location = new System.Drawing.Point(241, 36);
+            this.dgvRegion.Name = "dgvRegion";
+            this.dgvRegion.ReadOnly = true;
+            this.dgvRegion.Size = new System.Drawing.Size(177, 128);
+            this.dgvRegion.TabIndex = 15;
+            // 
             // frmCompte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 199);
+            this.ClientSize = new System.Drawing.Size(543, 208);
+            this.Controls.Add(this.dgvRegion);
+            this.Controls.Add(this.lblResp);
+            this.Controls.Add(this.btnMdp);
             this.Controls.Add(this.btnModifValid);
             this.Controls.Add(this.txtVille);
             this.Controls.Add(this.lblVille);
@@ -159,6 +195,7 @@
             this.ShowIcon = false;
             this.Text = "Gestion du compte";
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +215,8 @@
         private System.Windows.Forms.TextBox txtVille;
         private System.Windows.Forms.BindingSource bsVisiteur;
         private System.Windows.Forms.Button btnModifValid;
+        private System.Windows.Forms.Button btnMdp;
+        private System.Windows.Forms.Label lblResp;
+        private System.Windows.Forms.DataGridView dgvRegion;
     }
 }
