@@ -16,6 +16,7 @@ namespace PPE3_MLK
         public FrmMenu()
         {
             InitializeComponent();
+            informationsDuCompteToolStripMenuItem.Alignment = ToolStripItemAlignment.Left;
         }
 
         private void InformationsDuCompteToolStripMenuItem_Click(object sender, EventArgs e)
