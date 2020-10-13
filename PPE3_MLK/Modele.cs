@@ -80,5 +80,24 @@ namespace PPE3_MLK
             { vretour = LQuery.ToList()[0]; }
             return vretour;
         }
+
+        public static bool modifierVisiteur(string nom, string prenom, string rue, string cp, string ville)
+        {
+            bool vretour = true;
+            try
+            {
+                VisiteurConnecte.nom = nom;
+                VisiteurConnecte.prenom = prenom;
+                VisiteurConnecte.rue = rue;
+                VisiteurConnecte.cp = cp;
+                VisiteurConnecte.ville = ville;
+                maConnexion.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                vretour = false;
+            }
+            return vretour;
+        }
     }
 }

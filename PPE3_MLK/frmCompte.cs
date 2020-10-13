@@ -12,6 +12,7 @@ namespace PPE3_MLK
 {
     public partial class frmCompte : Form
     {
+        private string sErreur = "Erreur de saisie :\n";
         public frmCompte()
         {
             InitializeComponent();
@@ -37,9 +38,54 @@ namespace PPE3_MLK
             }
             else
             {
-
+                if (test())
+                {
+                    MessageBox.Show(sErreur, "Attention !");
+                    this.DialogResult = DialogResult.None;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                    string nom = txtNom.Text;
+                    string prenom = txtPrenom.Text;
+                    string rue = txtRue.Text;
+                    string cp = txtCP.Text;
+                    string ville = txtVille.Text;
+                    //Modele.modifierVisiteur(nom, prenom, rue, cp, ville);
+                }
             }
             
+        }
+
+        private bool test()
+        {
+            bool erreur = false;
+            if (txtNom.Text.Length == 0)
+            {
+                erreur = true;
+                sErreur += "\t\u25C9\tNom visiteur vide\n";
+            }
+            if(txtPrenom.Text.Length == 0)
+            {
+                erreur = true;
+                sErreur += "\t\u25C9\tPrenom visiteur vide\n";
+            }
+            if(txtRue.Text.Length == 0)
+            {
+                erreur = true;
+                sErreur += "\t\u25C9\tRue visiteur vide\n";
+            }
+            if(txtCP.Text.Length != 5)
+            {
+                erreur = true;
+                sErreur += "\t\u25C9\tCode postal visiteur incorrect\n";
+            }
+            if(txtVille.Text.Length == 0)
+            {
+                erreur = true;
+                sErreur += "\t\u25C9\tVille visiteur vide\n";
+            }
+            return erreur;
         }
     }
 }
