@@ -34,7 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Etat.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FAMILLE.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
     <Compile Include="FChoixComptesRendus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +74,12 @@
     <Compile Include="FGestionDesComptesRendus.Designer.cs">
       <DependentUpon>FGestionDesComptesRendus.cs</DependentUpon>
     </Compile>
+    <Compile Include="fichefrais.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FraisForfait.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
     <Compile Include="FrmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,9 +92,60 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Laboratoire.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LigneFraisForfait.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LigneFraisHorsForfait.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mdlProjetGSB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdlProjetGSB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mdlProjetGSB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mdlProjetGSB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MEDECIN.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MEDICAMENT.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modele.cs" />
+    <Compile Include="MOTIF.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OFFRIR.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RAPPORT.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Secteur.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPECIALITE.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Visiteur.cs">
+      <DependentUpon>mdlProjetGSB.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FChoixComptesRendus.resx">
       <DependentUpon>FChoixComptesRendus.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +170,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="mdlProjetGSB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>mdlProjetGSB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="mdlProjetGSB.edmx.diagram">
+      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,6 +191,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="mdlProjetGSB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
+      <LastGenOutput>mdlProjetGSB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="mdlProjetGSB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mdlProjetGSB.edmx</DependentUpon>
+      <LastGenOutput>mdlProjetGSB.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\userPic.ico" />
   </ItemGroup>
   <ItemGroup>
