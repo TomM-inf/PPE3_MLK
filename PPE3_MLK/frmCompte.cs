@@ -15,6 +15,13 @@ namespace PPE3_MLK
         public frmCompte()
         {
             InitializeComponent();
+            //remplissage informations VisiteurConnecté (en vu d'une visualisation ou futur modifications)
+            bsVisiteur.DataSource = Modele.VisiteurConnecte;
+            txtNom.Text = ((Visiteur)bsVisiteur.Current).nom.ToString();
+            txtPrenom.Text = ((Visiteur)bsVisiteur.Current).prenom.ToString();
+            txtRue.Text = ((Visiteur)bsVisiteur.Current).rue.ToString();
+            txtCP.Text = ((Visiteur)bsVisiteur.Current).cp.ToString();
+            txtVille.Text = ((Visiteur)bsVisiteur.Current).ville.ToString();
         }
     }
 }
