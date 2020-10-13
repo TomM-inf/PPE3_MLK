@@ -19,7 +19,7 @@ namespace PPE3_MLK
 
         private void Label8_Click(object sender, EventArgs e)
         {
-            if 
+            //if 
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
