@@ -46,16 +46,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FGestion DesComptesRendus.cs">
+    <Compile Include="FChoixComptesRendus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FGestion DesComptesRendus.Designer.cs">
-      <DependentUpon>FGestion DesComptesRendus.cs</DependentUpon>
+    <Compile Include="FChoixComptesRendus.Designer.cs">
+      <DependentUpon>FChoixComptesRendus.cs</DependentUpon>
     </Compile>
+    <Compile Include="FComptesRendus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FComptesRendus.Designer.cs">
+      <DependentUpon>FComptesRendus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGestionDesComptesRendus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGestionDesComptesRendus.Designer.cs">
+      <DependentUpon>FGestionDesComptesRendus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConnexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConnexion.Designer.cs">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modele.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FGestion DesComptesRendus.resx">
-      <DependentUpon>FGestion DesComptesRendus.cs</DependentUpon>
+    <EmbeddedResource Include="FChoixComptesRendus.resx">
+      <DependentUpon>FChoixComptesRendus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FComptesRendus.resx">
+      <DependentUpon>FComptesRendus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGestionDesComptesRendus.resx">
+      <DependentUpon>FGestionDesComptesRendus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConnexion.resx">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\userPic.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
