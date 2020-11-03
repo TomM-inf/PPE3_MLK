@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data; //DataTable
+
 namespace PPE3_MLK
 {
     public partial class frmListeVisiteur : Form
