@@ -32,12 +32,12 @@
             this.pnlSecReg = new System.Windows.Forms.Panel();
             this.lblIntitule = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bsRegion = new System.Windows.Forms.BindingSource(this.components);
+            this.bsSecteurRegion = new System.Windows.Forms.BindingSource(this.components);
             this.lblSelection = new System.Windows.Forms.Label();
             this.cboSecReg = new System.Windows.Forms.ComboBox();
             this.pnlSecReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSecteurRegion)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSecReg
@@ -101,7 +101,7 @@
             this.pnlSecReg.ResumeLayout(false);
             this.pnlSecReg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSecteurRegion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,7 +111,7 @@
         private System.Windows.Forms.Panel pnlSecReg;
         private System.Windows.Forms.Label lblIntitule;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource bsRegion;
+        private System.Windows.Forms.BindingSource bsSecteurRegion;
         private System.Windows.Forms.Label lblSelection;
         private System.Windows.Forms.ComboBox cboSecReg;
     }

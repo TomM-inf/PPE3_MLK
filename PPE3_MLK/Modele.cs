@@ -100,5 +100,15 @@ namespace PPE3_MLK
             }
             return vretour;
         }
+
+        public static Object listeRegion()
+        {
+            return maConnexion.Region.ToList();
+        }
+
+        public static Object listeSecteur()
+        {
+            return maConnexion.Secteur.ToList();
+        }
     }
 }
