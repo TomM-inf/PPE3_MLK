@@ -37,7 +37,7 @@ namespace PPE3_MLK
 
         public static void ThreadProc()
         {
-            Application.Run(new FrmMenu());
+            Application.Run(new FChoixComptesRendus());
         }
     }
 }

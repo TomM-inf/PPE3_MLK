@@ -80,5 +80,13 @@ namespace PPE3_MLK
             { vretour = LQuery.ToList()[0]; }
             return vretour;
         }
+        public static object RapportParMedecin(int idMedecin)
+        {
+            var lquery = maConnexion.RAPPORT.ToList()
+                .Where(x => x.idMedecin == idMedecin)
+                .Select(x => new { x.idRapport, x.dateRapport, x.idMedecin, x.idMotif, x.idVisiteur })
+                .OrderBy(x => x.dateRapport);
+            return lquery.ToList();
+        }
     }
 }

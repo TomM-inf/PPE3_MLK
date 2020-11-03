@@ -38,6 +38,7 @@
           <Property Name="id" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="libelle" Type="char" MaxLength="20" />
           <Property Name="montant" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="deplacement" Type="bit" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -605,6 +606,7 @@
           <Property Name="id" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
           <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="deplacement" Type="Boolean" />
           <NavigationProperty Name="LigneFraisForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
         </EntityType>
         <EntityType Name="Laboratoire">
@@ -952,7 +954,7 @@
           <End Type="GSB2_GroupeMLKModel.Region" Role="Region" Multiplicity="*" />
           <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="*" />
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -989,6 +991,7 @@
           <EntitySetMapping Name="FraisForfait">
             <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.FraisForfait">
               <MappingFragment StoreEntitySet="FraisForfait">
+                <ScalarProperty Name="deplacement" ColumnName="deplacement" />
                 <ScalarProperty Name="montant" ColumnName="montant" />
                 <ScalarProperty Name="libelle" ColumnName="libelle" />
                 <ScalarProperty Name="id" ColumnName="id" />

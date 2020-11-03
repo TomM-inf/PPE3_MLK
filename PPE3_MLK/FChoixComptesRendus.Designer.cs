@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnVisionner = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.btnCreer = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cboMedecin = new System.Windows.Forms.ComboBox();
+            this.dgvRapport = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cboMois = new System.Windows.Forms.ComboBox();
+            this.cboAnnee = new System.Windows.Forms.ComboBox();
+            this.bsRapport = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRapport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,58 +53,60 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Année";
             // 
-            // button1
+            // btnVisionner
             // 
-            this.button1.Location = new System.Drawing.Point(125, 378);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Visionner";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnVisionner.Location = new System.Drawing.Point(125, 378);
+            this.btnVisionner.Name = "btnVisionner";
+            this.btnVisionner.Size = new System.Drawing.Size(75, 23);
+            this.btnVisionner.TabIndex = 1;
+            this.btnVisionner.Text = "Visionner";
+            this.btnVisionner.UseVisualStyleBackColor = true;
+            this.btnVisionner.Click += new System.EventHandler(this.btnVisionner_Click);
             // 
-            // button2
+            // btnModifier
             // 
-            this.button2.Location = new System.Drawing.Point(358, 378);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Modifier";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModifier.Location = new System.Drawing.Point(358, 378);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(75, 23);
+            this.btnModifier.TabIndex = 2;
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnCreer
             // 
-            this.button3.Location = new System.Drawing.Point(596, 378);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Créer";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCreer.Location = new System.Drawing.Point(596, 378);
+            this.btnCreer.Name = "btnCreer";
+            this.btnCreer.Size = new System.Drawing.Size(75, 23);
+            this.btnCreer.TabIndex = 3;
+            this.btnCreer.Text = "Créer";
+            this.btnCreer.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(493, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Praticient";
+            this.label2.Text = "Medecin";
             // 
-            // comboBox1
+            // cboMedecin
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(550, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cboMedecin.FormattingEnabled = true;
+            this.cboMedecin.Location = new System.Drawing.Point(550, 62);
+            this.cboMedecin.Name = "cboMedecin";
+            this.cboMedecin.Size = new System.Drawing.Size(121, 21);
+            this.cboMedecin.TabIndex = 5;
+            this.cboMedecin.ValueMember = "adresse";
+            this.cboMedecin.SelectedIndexChanged += new System.EventHandler(this.CboMedecin_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // dgvRapport
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(125, 101);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(546, 251);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvRapport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRapport.Location = new System.Drawing.Point(125, 101);
+            this.dgvRapport.Name = "dgvRapport";
+            this.dgvRapport.Size = new System.Drawing.Size(546, 251);
+            this.dgvRapport.TabIndex = 8;
             // 
             // label3
             // 
@@ -112,40 +117,41 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Mois";
             // 
-            // comboBox2
+            // cboMois
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(348, 62);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 10;
+            this.cboMois.FormattingEnabled = true;
+            this.cboMois.Location = new System.Drawing.Point(348, 62);
+            this.cboMois.Name = "cboMois";
+            this.cboMois.Size = new System.Drawing.Size(121, 21);
+            this.cboMois.TabIndex = 10;
             // 
-            // comboBox3
+            // cboAnnee
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(166, 62);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 11;
+            this.cboAnnee.FormattingEnabled = true;
+            this.cboAnnee.Location = new System.Drawing.Point(166, 62);
+            this.cboAnnee.Name = "cboAnnee";
+            this.cboAnnee.Size = new System.Drawing.Size(121, 21);
+            this.cboAnnee.TabIndex = 11;
             // 
             // FChoixComptesRendus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cboAnnee);
+            this.Controls.Add(this.cboMois);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgvRapport);
+            this.Controls.Add(this.cboMedecin);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCreer);
+            this.Controls.Add(this.btnModifier);
+            this.Controls.Add(this.btnVisionner);
             this.Controls.Add(this.label1);
             this.Name = "FChoixComptesRendus";
             this.Text = "FChoixComptesRendus";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRapport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,14 +160,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnVisionner;
+        private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.Button btnCreer;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cboMedecin;
+        private System.Windows.Forms.DataGridView dgvRapport;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboMois;
+        private System.Windows.Forms.ComboBox cboAnnee;
+        private System.Windows.Forms.BindingSource bsRapport;
     }
 }

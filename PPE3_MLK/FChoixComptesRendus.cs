@@ -17,10 +17,22 @@ namespace PPE3_MLK
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void btnVisionner_Click(object sender, EventArgs e)
         {
             FComptesRendus open = new FComptesRendus();
             open.Show();
+        }
+
+        private void CboMedecin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bsRapport.DataSource = Modele.RapportParMedecin(int.Parse(cboMedecin.SelectedValue.ToString()));
+            dgvRapport.DataSource = bsRapport;
+            dgvRapport.Columns[0].HeaderText = "N°";
+            dgvRapport.Columns[1].HeaderText = "Date";
+            dgvRapport.Columns[2].HeaderText = "Medecin";
+            dgvRapport.Columns[3].HeaderText = "Motif";
+            dgvRapport.Columns[4].HeaderText = "Visiteur";
+            dgvRapport.Columns[5].Visible = false;
         }
     }
 }
