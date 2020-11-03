@@ -15,6 +15,20 @@ namespace PPE3_MLK
         public frmListeVisiteur()
         {
             InitializeComponent();
+            pnlSecReg.Visible = false;
+            if(Modele.ActionVisiteur == 0 || Modele.ActionVisiteur == 0)
+            {
+                pnlSecReg.Visible = true;
+                if(Modele.ActionVisiteur == 0)
+                {
+                    lblIntitule.Text = "Liste des visiteurs par secteurs :";
+                    
+                }
+                if(Modele.ActionVisiteur == 1)
+                {
+                    lblIntitule.Text = "Liste des visiteurs par région :";
+                }
+            }
         }
 
         private void FrmListeVisiteur_FormClosed(object sender, FormClosedEventArgs e)
