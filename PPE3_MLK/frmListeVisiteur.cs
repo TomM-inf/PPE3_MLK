@@ -21,12 +21,14 @@ namespace PPE3_MLK
                 pnlSecReg.Visible = true;
                 if(Modele.ActionVisiteur == 0)
                 {
-                    lblIntitule.Text = "Liste des visiteurs par secteurs :";
+                    lblSelection.Text = "Sélectionner le secteur";
+                    lblIntitule.Text = "Liste des visiteurs du secteur :";
                     
                 }
                 if(Modele.ActionVisiteur == 1)
                 {
-                    lblIntitule.Text = "Liste des visiteurs par région :";
+                    lblSelection.Text = "Sélectionner la région";
+                    lblIntitule.Text = "Liste des visiteurs de la région :";
                 }
             }
         }
