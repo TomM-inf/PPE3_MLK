@@ -31,20 +31,22 @@
             this.components = new System.ComponentModel.Container();
             this.pnlSecReg = new System.Windows.Forms.Panel();
             this.lblIntitule = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvVisiteur = new System.Windows.Forms.DataGridView();
             this.bsSecteurRegion = new System.Windows.Forms.BindingSource(this.components);
             this.lblSelection = new System.Windows.Forms.Label();
             this.cboSecReg = new System.Windows.Forms.ComboBox();
+            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             this.pnlSecReg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSecteurRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSecReg
             // 
             this.pnlSecReg.Controls.Add(this.cboSecReg);
             this.pnlSecReg.Controls.Add(this.lblSelection);
-            this.pnlSecReg.Controls.Add(this.dataGridView1);
+            this.pnlSecReg.Controls.Add(this.dgvVisiteur);
             this.pnlSecReg.Controls.Add(this.lblIntitule);
             this.pnlSecReg.Location = new System.Drawing.Point(13, 13);
             this.pnlSecReg.Name = "pnlSecReg";
@@ -60,16 +62,20 @@
             this.lblIntitule.TabIndex = 0;
             this.lblIntitule.Text = "label1";
             // 
-            // dataGridView1
+            // dgvVisiteur
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(316, 353);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvVisiteur.AllowUserToAddRows = false;
+            this.dgvVisiteur.AllowUserToDeleteRows = false;
+            this.dgvVisiteur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVisiteur.Location = new System.Drawing.Point(7, 69);
+            this.dgvVisiteur.Name = "dgvVisiteur";
+            this.dgvVisiteur.ReadOnly = true;
+            this.dgvVisiteur.Size = new System.Drawing.Size(316, 353);
+            this.dgvVisiteur.TabIndex = 1;
+            // 
+            // bsSecteurRegion
+            // 
+            this.bsSecteurRegion.CurrentChanged += new System.EventHandler(this.BsSecteurRegion_CurrentChanged);
             // 
             // lblSelection
             // 
@@ -100,8 +106,9 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmListeVisiteur_FormClosed);
             this.pnlSecReg.ResumeLayout(false);
             this.pnlSecReg.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSecteurRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,9 +117,10 @@
 
         private System.Windows.Forms.Panel pnlSecReg;
         private System.Windows.Forms.Label lblIntitule;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvVisiteur;
         private System.Windows.Forms.BindingSource bsSecteurRegion;
         private System.Windows.Forms.Label lblSelection;
         private System.Windows.Forms.ComboBox cboSecReg;
+        private System.Windows.Forms.BindingSource bsVisiteur;
     }
 }

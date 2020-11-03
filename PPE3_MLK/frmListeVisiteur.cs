@@ -46,5 +46,30 @@ namespace PPE3_MLK
         {
             this.MdiParent.IsMdiContainer = false;
         }
+
+        private void BsSecteurRegion_CurrentChanged(object sender, EventArgs e)
+        {
+            if(cboSecReg.SelectedIndex!= -1) //on vérifie que la selection n'est pas vide
+            {
+                if (Modele.ActionVisiteur == 0)
+                {
+
+                }
+                if (Modele.ActionVisiteur == 1) //si on a choisi une région
+                {
+                    bsVisiteur.DataSource = ((Region)bsSecteurRegion.Current).Visiteur1.ToList();
+                    dgvVisiteur.DataSource = bsVisiteur;
+                    for (int i = 0; i < dgvVisiteur.ColumnCount; i++)
+                    {
+                        dgvVisiteur.Columns[i].Visible = false;
+                    }
+                    dgvVisiteur.Columns["nom"].Visible = true;
+                    dgvVisiteur.Columns["nom"].HeaderText = "Nom";
+                    dgvVisiteur.Columns["prenom"].Visible = true;
+                    dgvVisiteur.Columns["prenom"].HeaderText = "Prenom";
+                    dgvVisiteur.ClearSelection();
+                }
+            }
+        }
     }
 }
