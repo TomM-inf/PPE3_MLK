@@ -1,6 +1,6 @@
 ﻿namespace PPE3_MLK
 {
-    partial class Form2
+    partial class FGestionDesComptesRendus
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FGestionDesComptesRendus));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnMedicaments = new System.Windows.Forms.Button();
@@ -58,57 +58,65 @@
             // 
             // btnQuitter
             // 
+            this.btnQuitter.BackColor = System.Drawing.Color.DimGray;
             this.btnQuitter.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuitter.Location = new System.Drawing.Point(0, 377);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(200, 82);
             this.btnQuitter.TabIndex = 1;
             this.btnQuitter.Text = "Quitter";
-            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.UseVisualStyleBackColor = false;
             // 
             // btnMedicaments
             // 
+            this.btnMedicaments.BackColor = System.Drawing.Color.DimGray;
             this.btnMedicaments.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMedicaments.Location = new System.Drawing.Point(0, 317);
             this.btnMedicaments.Name = "btnMedicaments";
             this.btnMedicaments.Size = new System.Drawing.Size(200, 60);
             this.btnMedicaments.TabIndex = 1;
             this.btnMedicaments.Text = "Medicaments";
-            this.btnMedicaments.UseVisualStyleBackColor = true;
+            this.btnMedicaments.UseVisualStyleBackColor = false;
             // 
             // btnPraticiens
             // 
+            this.btnPraticiens.BackColor = System.Drawing.Color.DimGray;
             this.btnPraticiens.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPraticiens.Location = new System.Drawing.Point(0, 246);
             this.btnPraticiens.Name = "btnPraticiens";
             this.btnPraticiens.Size = new System.Drawing.Size(200, 71);
             this.btnPraticiens.TabIndex = 4;
             this.btnPraticiens.Text = "Praticiens";
-            this.btnPraticiens.UseVisualStyleBackColor = true;
+            this.btnPraticiens.UseVisualStyleBackColor = false;
             // 
             // btnVisiteurs
             // 
+            this.btnVisiteurs.BackColor = System.Drawing.Color.DimGray;
             this.btnVisiteurs.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVisiteurs.Location = new System.Drawing.Point(0, 179);
             this.btnVisiteurs.Name = "btnVisiteurs";
             this.btnVisiteurs.Size = new System.Drawing.Size(200, 67);
             this.btnVisiteurs.TabIndex = 3;
             this.btnVisiteurs.Text = "Visiteurs";
-            this.btnVisiteurs.UseVisualStyleBackColor = true;
+            this.btnVisiteurs.UseVisualStyleBackColor = false;
             // 
             // btnComptesRendus
             // 
+            this.btnComptesRendus.BackColor = System.Drawing.Color.DimGray;
             this.btnComptesRendus.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnComptesRendus.Location = new System.Drawing.Point(0, 103);
             this.btnComptesRendus.Name = "btnComptesRendus";
             this.btnComptesRendus.Size = new System.Drawing.Size(200, 76);
             this.btnComptesRendus.TabIndex = 2;
             this.btnComptesRendus.Text = "Comptes-Rendus";
-            this.btnComptesRendus.UseVisualStyleBackColor = true;
+            this.btnComptesRendus.UseVisualStyleBackColor = false;
+            this.btnComptesRendus.Click += new System.EventHandler(this.BtnComptesRendus_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -116,6 +124,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(200, 103);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
             // 
             // panel2
             // 
@@ -126,7 +135,7 @@
             this.panel2.Size = new System.Drawing.Size(707, 561);
             this.panel2.TabIndex = 1;
             // 
-            // Form2
+            // FGestionDesComptesRendus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,8 +143,9 @@
             this.ClientSize = new System.Drawing.Size(934, 585);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Form2";
-            this.Text = "GEstion des comptes rendus ";
+            this.Name = "FGestionDesComptesRendus";
+            this.Text = "Gestion des comptes rendus ";
+            this.Load += new System.EventHandler(this.FGestionDesComptesRendus_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -153,5 +163,6 @@
         private System.Windows.Forms.Button btnPraticiens;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Panel panel2;
+
     }
 }

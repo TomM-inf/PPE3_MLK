@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace PPE3_MLK
 {
@@ -16,7 +17,8 @@ namespace PPE3_MLK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Modele.init();
+            Application.Run(new FrmConnexion());
         }
     }
 }

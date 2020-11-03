@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace PPE3_MLK
 {
-    public partial class Form2 : Form
+    public partial class FChoixComptesRendus : Form
     {
-        public Form2()
+        public FChoixComptesRendus()
         {
             InitializeComponent();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FComptesRendus open = new FComptesRendus();
+            open.Show();
         }
     }
 }
