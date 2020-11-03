@@ -17,12 +17,39 @@ namespace PPE3_MLK
         {
             InitializeComponent();
             informationsDuCompteToolStripMenuItem.Alignment = ToolStripItemAlignment.Left;
+            this.IsMdiContainer = false;
         }
 
         private void InformationsDuCompteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCompte fCompte = new frmCompte();
             fCompte.ShowDialog();
+        }
+
+        private void affichageParent()
+        {
+            this.IsMdiContainer = true;
+            frmListeVisiteur flv = new frmListeVisiteur();
+            flv.MdiParent = this;
+            flv.Show();
+      
+        }
+        private void ParSecteurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Modele.ActionVisiteur = 0;
+            affichageParent();
+        }
+
+        private void ParRegionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Modele.ActionVisiteur = 1;
+            affichageParent();
+        }
+
+        private void HiérarchieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Modele.ActionVisiteur = 2;
+            affichageParent();
         }
     }
 }

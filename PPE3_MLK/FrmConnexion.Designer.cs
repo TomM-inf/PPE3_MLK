@@ -52,6 +52,7 @@
             this.txtIdentifiant.Name = "txtIdentifiant";
             this.txtIdentifiant.Size = new System.Drawing.Size(100, 20);
             this.txtIdentifiant.TabIndex = 1;
+            this.txtIdentifiant.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtIdentifiant_KeyUp);
             // 
             // txtMDP
             // 
@@ -60,6 +61,7 @@
             this.txtMDP.PasswordChar = '*';
             this.txtMDP.Size = new System.Drawing.Size(100, 20);
             this.txtMDP.TabIndex = 2;
+            this.txtMDP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtIdentifiant_KeyUp);
             // 
             // btnOK
             // 

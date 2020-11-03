@@ -40,5 +40,21 @@ namespace PPE3_MLK
         {
             Application.Run(new FrmMenu());
         }
+
+        private void TxtIdentifiant_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                string reponse = Modele.validConnexion(txtIdentifiant.Text, txtMDP.Text);
+                lblMsg.Text = reponse;
+                lblMsg.Visible = true;
+                if (reponse == "valide")
+                {
+                    System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+                    t.Start();
+                    this.Close();
+                }
+            }
+        }
     }
 }

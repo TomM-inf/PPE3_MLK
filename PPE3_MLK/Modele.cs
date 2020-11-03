@@ -13,9 +13,10 @@ namespace PPE3_MLK
         private static Visiteur visiteurConnecte;
         private static bool connexionValide;
         private static List<Visiteur> malist;
-
+        private static int actionVisiteur;
         public static Visiteur VisiteurConnecte { get => visiteurConnecte; }
         public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
+        public static int ActionVisiteur { get => actionVisiteur; set => actionVisiteur = value; }
 
         public static void init()
         {

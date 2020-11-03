@@ -31,13 +31,18 @@
             this.menuStrpMain = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informationsDuCompteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visiteursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parSecteurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parRegionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hiérarchieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrpMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrpMain
             // 
             this.menuStrpMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem});
+            this.optionsToolStripMenuItem,
+            this.visiteursToolStripMenuItem});
             this.menuStrpMain.Location = new System.Drawing.Point(0, 0);
             this.menuStrpMain.Name = "menuStrpMain";
             this.menuStrpMain.Size = new System.Drawing.Size(800, 24);
@@ -56,10 +61,41 @@
             // informationsDuCompteToolStripMenuItem
             // 
             this.informationsDuCompteToolStripMenuItem.Name = "informationsDuCompteToolStripMenuItem";
-            this.informationsDuCompteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.informationsDuCompteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.informationsDuCompteToolStripMenuItem.Text = "Gestion du compte";
             this.informationsDuCompteToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.informationsDuCompteToolStripMenuItem.Click += new System.EventHandler(this.InformationsDuCompteToolStripMenuItem_Click);
+            // 
+            // visiteursToolStripMenuItem
+            // 
+            this.visiteursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.parSecteurToolStripMenuItem,
+            this.parRegionToolStripMenuItem,
+            this.hiérarchieToolStripMenuItem});
+            this.visiteursToolStripMenuItem.Name = "visiteursToolStripMenuItem";
+            this.visiteursToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.visiteursToolStripMenuItem.Text = "Visiteurs";
+            // 
+            // parSecteurToolStripMenuItem
+            // 
+            this.parSecteurToolStripMenuItem.Name = "parSecteurToolStripMenuItem";
+            this.parSecteurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.parSecteurToolStripMenuItem.Text = "Par secteur";
+            this.parSecteurToolStripMenuItem.Click += new System.EventHandler(this.ParSecteurToolStripMenuItem_Click);
+            // 
+            // parRegionToolStripMenuItem
+            // 
+            this.parRegionToolStripMenuItem.Name = "parRegionToolStripMenuItem";
+            this.parRegionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.parRegionToolStripMenuItem.Text = "Par region";
+            this.parRegionToolStripMenuItem.Click += new System.EventHandler(this.ParRegionToolStripMenuItem_Click);
+            // 
+            // hiérarchieToolStripMenuItem
+            // 
+            this.hiérarchieToolStripMenuItem.Name = "hiérarchieToolStripMenuItem";
+            this.hiérarchieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hiérarchieToolStripMenuItem.Text = "Hiérarchie";
+            this.hiérarchieToolStripMenuItem.Click += new System.EventHandler(this.HiérarchieToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
@@ -83,6 +119,10 @@
         private System.Windows.Forms.MenuStrip menuStrpMain;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informationsDuCompteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visiteursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem parSecteurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem parRegionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hiérarchieToolStripMenuItem;
     }
 }
 
