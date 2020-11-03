@@ -19,6 +19,9 @@ namespace PPE3_MLK
             panel2.Visible = false;
             btnModif.Visible = false;
             textBox5.Text = Modele.nomVisiteur();
+            Txtnom2.Text = Modele.nomVisiteur();
+            txtIdVisiteur.Text = Modele.IDVisiteur();
+            
 
             bsFicheFrais.DataSource = Modele.ListeFiche();
             dgvListFicheFrais.DataSource = bsFicheFrais;
@@ -35,6 +38,8 @@ namespace PPE3_MLK
             dgvListFicheFrais.Columns["montantValide"].DisplayIndex = 0;
             dgvListFicheFrais.Columns["montantValide"].HeaderText="Montant";
             dgvListFicheFrais.Columns["idVisiteur"].Visible = false;
+
+
 
         }
 
@@ -71,6 +76,11 @@ namespace PPE3_MLK
         {
             btnQuitter.Visible = false;
             btnModif.Visible = true;
+        }
+
+        private void BsFicheFrais_CurrentChanged(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
         }
     }
 }

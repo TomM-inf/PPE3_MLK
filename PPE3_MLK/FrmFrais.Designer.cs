@@ -51,6 +51,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.bsFraisForfait = new System.Windows.Forms.BindingSource(this.components);
             this.bsFraisHorsForfait = new System.Windows.Forms.BindingSource(this.components);
+            this.Txtnom2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutresFrais)).BeginInit();
@@ -112,6 +113,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Txtnom2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtTotalFrais);
             this.panel2.Controls.Add(this.txtTotalDate);
@@ -130,7 +132,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(184, 267);
+            this.label5.Location = new System.Drawing.Point(219, 253);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 9;
@@ -140,6 +142,7 @@
             // 
             this.txtTotalFrais.Location = new System.Drawing.Point(364, 453);
             this.txtTotalFrais.Name = "txtTotalFrais";
+            this.txtTotalFrais.ReadOnly = true;
             this.txtTotalFrais.Size = new System.Drawing.Size(100, 20);
             this.txtTotalFrais.TabIndex = 8;
             // 
@@ -147,6 +150,7 @@
             // 
             this.txtTotalDate.Location = new System.Drawing.Point(258, 453);
             this.txtTotalDate.Name = "txtTotalDate";
+            this.txtTotalDate.ReadOnly = true;
             this.txtTotalDate.Size = new System.Drawing.Size(100, 20);
             this.txtTotalDate.TabIndex = 7;
             // 
@@ -172,6 +176,7 @@
             // 
             this.txtDate.Location = new System.Drawing.Point(132, 62);
             this.txtDate.Name = "txtDate";
+            this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(100, 20);
             this.txtDate.TabIndex = 4;
             this.txtDate.TextChanged += new System.EventHandler(this.Txt2_TextChanged);
@@ -180,6 +185,7 @@
             // 
             this.txtIdVisiteur.Location = new System.Drawing.Point(132, 36);
             this.txtIdVisiteur.Name = "txtIdVisiteur";
+            this.txtIdVisiteur.ReadOnly = true;
             this.txtIdVisiteur.Size = new System.Drawing.Size(100, 20);
             this.txtIdVisiteur.TabIndex = 3;
             this.txtIdVisiteur.TextChanged += new System.EventHandler(this.txt1_TextChanged);
@@ -232,6 +238,10 @@
             this.dgvListFicheFrais.Size = new System.Drawing.Size(245, 360);
             this.dgvListFicheFrais.TabIndex = 0;
             // 
+            // bsFicheFrais
+            // 
+            this.bsFicheFrais.CurrentChanged += new System.EventHandler(this.BsFicheFrais_CurrentChanged);
+            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(148, 45);
@@ -239,6 +249,14 @@
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(151, 20);
             this.textBox5.TabIndex = 5;
+            // 
+            // Txtnom2
+            // 
+            this.Txtnom2.Location = new System.Drawing.Point(287, 36);
+            this.Txtnom2.Name = "Txtnom2";
+            this.Txtnom2.ReadOnly = true;
+            this.Txtnom2.Size = new System.Drawing.Size(100, 20);
+            this.Txtnom2.TabIndex = 10;
             // 
             // FrmFrais
             // 
@@ -289,5 +307,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.BindingSource bsFraisForfait;
         private System.Windows.Forms.BindingSource bsFraisHorsForfait;
+        private System.Windows.Forms.TextBox Txtnom2;
     }
 }

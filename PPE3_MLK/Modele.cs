@@ -14,6 +14,7 @@ namespace PPE3_MLK
         private static bool connexionValide;
         private static List<Visiteur> malist;
 
+
         public static Visiteur VisiteurConnecte { get => visiteurConnecte; }
         public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
 
@@ -88,10 +89,27 @@ namespace PPE3_MLK
             return vretour;
         }
 
+        public static string IDVisiteur()
+        {
+            string vretour = "";
+            vretour = VisiteurConnecte.idVisiteur;
+            return vretour;
+
+        }
+
+        public static string afficherDate()
+        {
+            string vretour = "";
+
+            return vretour;
+        }
+
         public static List<fichefrais> ListeFiche() //la liste de fiches pour l'afficher ensuite.
         {
             return maConnexion.fichefrais.ToList();
         }
+
+
 
     }
 
