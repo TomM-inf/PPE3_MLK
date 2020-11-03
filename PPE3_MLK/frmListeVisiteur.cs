@@ -18,27 +18,29 @@ namespace PPE3_MLK
             pnlSecReg.Visible = false;
             if(Modele.ActionVisiteur == 0 || Modele.ActionVisiteur == 1)
             {
-                pnlSecReg.Visible = true;
-                if(Modele.ActionVisiteur == 0)
+                pnlResp.Visible = false;
+                pnlRespSecteur.Visible = false;
+                if (Modele.ActionVisiteur == 0)
                 {
-                    lblSelection.Text = "Sélectionner le secteur";
-                    lblIntitule.Text = "Liste des visiteurs du secteur :";
-                    cboSecReg.ValueMember = "idSecteur";
-                    cboSecReg.DisplayMember = "libSecteur";
-                    bsSecteurRegion.DataSource = Modele.listeSecteur();
-                    cboSecReg.DataSource = bsSecteurRegion;
-                    cboSecReg.SelectedIndex = -1;
+                    pnlSecReg.Location = new Point(12, 100);
+                    cboSecteur.ValueMember = "idSecteur";
+                    cboSecteur.DisplayMember = "libSecteur";
+                    bsSecteur.DataSource = Modele.listeSecteur();
+                    cboSecteur.DataSource = bsSecteur;
+                    cboSecteur.SelectedIndex = -1;
                 }
                 if(Modele.ActionVisiteur == 1)
                 {
-                    lblSelection.Text = "Sélectionner la région";
-                    lblIntitule.Text = "Liste des visiteurs de la région :";
-                    cboSecReg.ValueMember = "idRegion";
-                    cboSecReg.DisplayMember = "libRegion";
-                    bsSecteurRegion.DataSource = Modele.listeRegion();
-                    cboSecReg.DataSource = bsSecteurRegion;
-                    cboSecReg.SelectedIndex = -1;
+                    lblSecteur.Visible = false;
+                    cboSecteur.Visible = false;
+                    cboReg.ValueMember = "idRegion";
+                    cboReg.DisplayMember = "libRegion";
+                    bsRegion.DataSource = Modele.listeRegion();
+                    cboReg.DataSource = bsRegion;
+                    cboReg.SelectedIndex = -1;
+                    pnlSecReg.Location = new Point(12,12);
                 }
+                pnlSecReg.Visible = true;
             }
         }
 
@@ -49,27 +51,50 @@ namespace PPE3_MLK
 
         private void BsSecteurRegion_CurrentChanged(object sender, EventArgs e)
         {
-            if(cboSecReg.SelectedIndex!= -1) //on vérifie que la selection n'est pas vide
+            if(cboReg.SelectedIndex!= -1) //on vérifie que la selection n'est pas vide
             {
-                if (Modele.ActionVisiteur == 0)
+                //remplissage DGV
+                bsVisiteur.DataSource = ((Region)bsRegion.Current).Visiteur1.ToList();
+                dgvVisiteur.DataSource = bsVisiteur;
+                for (int i = 0; i < dgvVisiteur.ColumnCount; i++)
                 {
-
+                    dgvVisiteur.Columns[i].Visible = false;
                 }
-                if (Modele.ActionVisiteur == 1) //si on a choisi une région
-                {
-                    bsVisiteur.DataSource = ((Region)bsSecteurRegion.Current).Visiteur1.ToList();
-                    dgvVisiteur.DataSource = bsVisiteur;
-                    for (int i = 0; i < dgvVisiteur.ColumnCount; i++)
-                    {
-                        dgvVisiteur.Columns[i].Visible = false;
-                    }
-                    dgvVisiteur.Columns["nom"].Visible = true;
-                    dgvVisiteur.Columns["nom"].HeaderText = "Nom";
-                    dgvVisiteur.Columns["prenom"].Visible = true;
-                    dgvVisiteur.Columns["prenom"].HeaderText = "Prenom";
-                    dgvVisiteur.ClearSelection();
-                }
+                dgvVisiteur.Columns["nom"].Visible = true;
+                dgvVisiteur.Columns["nom"].HeaderText = "Nom";
+                dgvVisiteur.Columns["prenom"].Visible = true;
+                dgvVisiteur.Columns["prenom"].HeaderText = "Prenom";
+                dgvVisiteur.ClearSelection();
+                dgvVisiteur.RowHeadersVisible = false;
+                pnlResp.Visible = true;
+                //Remplissage RESP
+                txtNom.Text = ((Region)bsRegion.Current).Visiteur.nom;
+                txtPrenom.Text = ((Region)bsRegion.Current).Visiteur.prenom;
+                
             }
+        }
+
+        private void BsSecteur_CurrentChanged(object sender, EventArgs e)
+        {
+            //remplissage bsRegion
+            cboReg.ValueMember = "idRegion";
+            cboReg.DisplayMember = "libRegion";
+            bsRegion.DataSource = ((Secteur)bsSecteur.Current).Region.ToList();
+            cboReg.DataSource = bsRegion;
+            cboReg.SelectedIndex = -1;
+            //Remplissage RESP secteur
+            if (cboSecteur.SelectedIndex!= -1)
+            {
+                pnlRespSecteur.Visible = true;
+                txtNomSecteur.Text = ((Secteur)bsSecteur.Current).Visiteur.nom;
+                txtPrenomSecteur.Text = ((Secteur)bsSecteur.Current).Visiteur.prenom;
+            }
+            //remplissage bs region
+            cboReg.ValueMember = "idRegion";
+            cboReg.DisplayMember = "libRegion";
+            cboReg.DataSource = bsRegion;
+            cboReg.SelectedIndex = -1;
+            pnlResp.Visible = false;
         }
     }
 }
