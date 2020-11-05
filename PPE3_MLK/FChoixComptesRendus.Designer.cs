@@ -40,8 +40,14 @@
             this.cboMois = new System.Windows.Forms.ComboBox();
             this.cboAnnee = new System.Windows.Forms.ComboBox();
             this.bsRapport = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMedecin = new System.Windows.Forms.BindingSource(this.components);
+            this.bsAnnee = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMois = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAnnee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMois)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,6 +98,7 @@
             // 
             // cboMedecin
             // 
+            this.cboMedecin.DisplayMember = "adresse";
             this.cboMedecin.FormattingEnabled = true;
             this.cboMedecin.Location = new System.Drawing.Point(550, 62);
             this.cboMedecin.Name = "cboMedecin";
@@ -150,8 +157,12 @@
             this.Controls.Add(this.label1);
             this.Name = "FChoixComptesRendus";
             this.Text = "FChoixComptesRendus";
+            this.Load += new System.EventHandler(this.FChoixComptesRendus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAnnee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMois)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +181,8 @@
         private System.Windows.Forms.ComboBox cboMois;
         private System.Windows.Forms.ComboBox cboAnnee;
         private System.Windows.Forms.BindingSource bsRapport;
+        private System.Windows.Forms.BindingSource bsMedecin;
+        private System.Windows.Forms.BindingSource bsAnnee;
+        private System.Windows.Forms.BindingSource bsMois;
     }
 }

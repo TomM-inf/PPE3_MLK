@@ -16,13 +16,13 @@ namespace PPE3_MLK
         {
             InitializeComponent();
         }
-
-        private void btnVisionner_Click(object sender, EventArgs e)
+        private void FChoixComptesRendus_Load(object sender, EventArgs e)
         {
-            FComptesRendus open = new FComptesRendus();
-            open.Show();
+            cboMedecin.ValueMember = "idMedecin";
+            cboMedecin.DisplayMember = "nom";
+            bsMedecin.DataSource = Modele.listeMedecin();
+            cboMedecin.DataSource = bsMedecin;
         }
-
         private void CboMedecin_SelectedIndexChanged(object sender, EventArgs e)
         {
             bsRapport.DataSource = Modele.RapportParMedecin(int.Parse(cboMedecin.SelectedValue.ToString()));
@@ -32,7 +32,12 @@ namespace PPE3_MLK
             dgvRapport.Columns[2].HeaderText = "Medecin";
             dgvRapport.Columns[3].HeaderText = "Motif";
             dgvRapport.Columns[4].HeaderText = "Visiteur";
-            dgvRapport.Columns[5].Visible = false;
+           // dgvRapport.Columns[5].Visible = false;
+        }
+        private void btnVisionner_Click(object sender, EventArgs e)
+        {
+            FComptesRendus open = new FComptesRendus();
+            open.Show();
         }
     }
 }
