@@ -39,7 +39,7 @@ namespace PPE3_MLK
             dgvListFicheFrais.Columns["montantValide"].HeaderText="Montant";
             dgvListFicheFrais.Columns["idVisiteur"].Visible = false;
 
-
+            
 
         }
 
