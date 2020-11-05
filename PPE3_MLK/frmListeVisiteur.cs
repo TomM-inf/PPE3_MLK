@@ -14,6 +14,7 @@ namespace PPE3_MLK
 {
     public partial class frmListeVisiteur : Form
     {
+        private System.EventArgs x;
         public frmListeVisiteur()
         {
             InitializeComponent();
@@ -53,6 +54,7 @@ namespace PPE3_MLK
 
         private void BsSecteurRegion_CurrentChanged(object sender, EventArgs e)
         {
+
             if(cboReg.SelectedIndex!= -1) //on vérifie que la selection n'est pas vide
             {
                 //remplissage DGV
@@ -78,6 +80,10 @@ namespace PPE3_MLK
 
         private void BsSecteur_CurrentChanged(object sender, EventArgs e)
         {
+            if(bsSecteur.Current == null)
+            {
+                bsSecteur.MoveFirst();
+            }
             //remplissage bsRegion
             cboReg.ValueMember = "idRegion";
             cboReg.DisplayMember = "libRegion";
@@ -85,7 +91,7 @@ namespace PPE3_MLK
             cboReg.DataSource = bsRegion;
             cboReg.SelectedIndex = -1;
             //Remplissage RESP secteur
-            if (cboSecteur.SelectedIndex!= -1)
+            //if (cboSecteur.SelectedIndex > -1)
             {
                 pnlRespSecteur.Visible = true;
                 txtNomSecteur.Text = ((Secteur)bsSecteur.Current).Visiteur.nom;
@@ -97,6 +103,11 @@ namespace PPE3_MLK
             cboReg.DataSource = bsRegion;
             cboReg.SelectedIndex = -1;
             pnlResp.Visible = false;
+        }
+
+        private void CboSecteur_DisplayMemberChanged(object sender, EventArgs e)
+        {
+           BsSecteur_CurrentChanged(this, e);
         }
     }
 }
