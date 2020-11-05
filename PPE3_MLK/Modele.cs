@@ -36,6 +36,33 @@ namespace PPE3_MLK
             return sb.ToString();
         }
 
+        public static bool validMDP(string PasswdSaisi)
+        {
+            bool error = false;
+            if (VisiteurConnecte.password.Equals(GetMd5Hash(PasswdSaisi))) //si le MDP dans la BDD est = au MDP donné + hashé
+            {
+                error = false; //oui alors pas d'erreur
+            }
+            else
+            {
+                error = true; //les mdp ne sont pas identiques donc erreur
+            }
+            return error;
+        }
+
+        public static void changementMDP(string MDP)
+        {
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(MDP);
+            byte[] hash = (MD5.Create()).ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("x2"));
+            }
+            VisiteurConnecte.password = sb.ToString();
+            maConnexion.SaveChanges();
+        }
+
         public static string validConnexion(string id, string mp)
         {
             string message = "";
