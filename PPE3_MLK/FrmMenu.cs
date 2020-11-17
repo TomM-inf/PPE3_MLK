@@ -60,5 +60,13 @@ namespace PPE3_MLK
             Modele.ActionVisiteur = 2;
             affichageParent();
         }
+
+        private void GestionDesComptesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            FrmGestionComptes fgc = new FrmGestionComptes();
+            fgc.MdiParent = this;
+            fgc.Show();
+        }
     }
 }

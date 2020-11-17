@@ -35,6 +35,7 @@ namespace PPE3_MLK
         public string dateEmbauche { get; set; }
         public string identifiant { get; set; }
         public string password { get; set; }
+        public Nullable<bool> etatCompte { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<fichefrais> fichefrais { get; set; }

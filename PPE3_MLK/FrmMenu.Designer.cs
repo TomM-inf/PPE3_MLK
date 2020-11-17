@@ -36,6 +36,7 @@
             this.parRegionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hiérarchieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDesComptesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrpMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,9 +103,18 @@
             // administationToolStripMenuItem
             // 
             this.administationToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.administationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDesComptesToolStripMenuItem});
             this.administationToolStripMenuItem.Name = "administationToolStripMenuItem";
             this.administationToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.administationToolStripMenuItem.Text = "Administation";
+            // 
+            // gestionDesComptesToolStripMenuItem
+            // 
+            this.gestionDesComptesToolStripMenuItem.Name = "gestionDesComptesToolStripMenuItem";
+            this.gestionDesComptesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.gestionDesComptesToolStripMenuItem.Text = "Gestion des comptes";
+            this.gestionDesComptesToolStripMenuItem.Click += new System.EventHandler(this.GestionDesComptesToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
@@ -133,6 +143,7 @@
         private System.Windows.Forms.ToolStripMenuItem parRegionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hiérarchieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDesComptesToolStripMenuItem;
     }
 }
 

@@ -166,6 +166,7 @@
           <Property Name="dateEmbauche" Type="char" MaxLength="10" />
           <Property Name="identifiant" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="etatCompte" Type="bit" />
         </EntityType>
         <Association Name="FK__fichefrai__idEta__5629CD9C">
           <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
@@ -777,6 +778,7 @@
           <NavigationProperty Name="Secteur" Relationship="GSB2_GroupeMLKModel.FK_VISITEURSECTEUR" FromRole="Visiteur" ToRole="Secteur" />
           <NavigationProperty Name="Region1" Relationship="GSB2_GroupeMLKModel.Travailler" FromRole="Visiteur" ToRole="Region" />
           <NavigationProperty Name="Laboratoire1" Relationship="GSB2_GroupeMLKModel.FK_ResponsableLabo" FromRole="Visiteur" ToRole="Laboratoire" />
+          <Property Name="etatCompte" Type="Boolean" />
         </EntityType>
         <Association Name="FK__fichefrai__idEta__5629CD9C">
           <End Type="GSB2_GroupeMLKModel.Etat" Role="Etat" Multiplicity="0..1" />
@@ -1149,6 +1151,7 @@
           <EntitySetMapping Name="Visiteur">
             <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.Visiteur">
               <MappingFragment StoreEntitySet="Visiteur">
+                <ScalarProperty Name="etatCompte" ColumnName="etatCompte" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="identifiant" ColumnName="identifiant" />
                 <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />

@@ -88,6 +88,12 @@
     <Compile Include="FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionComptes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionComptes.Designer.cs">
+      <DependentUpon>FrmGestionComptes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListeVisiteur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionComptes.resx">
+      <DependentUpon>FrmGestionComptes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListeVisiteur.resx">
       <DependentUpon>frmListeVisiteur.cs</DependentUpon>

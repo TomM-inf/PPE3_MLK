@@ -96,6 +96,11 @@ namespace PPE3_MLK
                     }
                 }
             }
+            if (VisiteurConnecte.etatCompte == false)
+            {
+                ConnexionValide = false;
+                message = "Compte inactif";
+            }
             return message;
         }
 
@@ -138,6 +143,11 @@ namespace PPE3_MLK
             return maConnexion.Secteur.ToList();
         }
 
+        public static Object listevisiteur()
+        {
+            return maConnexion.Visiteur.ToList();
+        }
+
         public static bool estResponsable() //si la personne est responsable
         {
             bool vretour = false;
@@ -145,7 +155,14 @@ namespace PPE3_MLK
             {
                 vretour = true;
             }
+            //ajouter conditions si resp secteur ou region (puis gérer en fonction)
             return vretour;
+        }
+
+        public static void changementEtat(Visiteur visiteurSelectionne, bool etat)
+        {
+            visiteurSelectionne.etatCompte = etat;
+            maConnexion.SaveChanges();
         }
     }
 }
