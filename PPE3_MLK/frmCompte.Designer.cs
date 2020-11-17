@@ -151,6 +151,7 @@
             this.btnMdp.TabIndex = 11;
             this.btnMdp.Text = "Modification mot de passe";
             this.btnMdp.UseVisualStyleBackColor = true;
+            this.btnMdp.Click += new System.EventHandler(this.BtnMdp_Click);
             // 
             // lblResp
             // 

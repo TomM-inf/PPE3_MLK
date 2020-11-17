@@ -113,5 +113,11 @@ namespace PPE3_MLK
                 dgvRegion.Size = new System.Drawing.Size(177, 128);
             }
         }
+
+        private void BtnMdp_Click(object sender, EventArgs e)
+        {
+            FrmChangementMDP fChangementMDP = new FrmChangementMDP();
+            fChangementMDP.ShowDialog();
+        }
     }
 }

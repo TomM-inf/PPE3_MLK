@@ -70,6 +70,12 @@
     <Compile Include="FraisForfait.cs">
       <DependentUpon>mdlProjetGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="FrmChangementMDP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangementMDP.Designer.cs">
+      <DependentUpon>FrmChangementMDP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCompte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>mdlProjetGSB.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmChangementMDP.resx">
+      <DependentUpon>FrmChangementMDP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCompte.resx">
       <DependentUpon>frmCompte.cs</DependentUpon>
     </EmbeddedResource>
