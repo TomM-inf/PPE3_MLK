@@ -80,10 +80,6 @@ namespace PPE3_MLK
 
         private void BsSecteur_CurrentChanged(object sender, EventArgs e)
         {
-            if(bsSecteur.Current == null)
-            {
-                bsSecteur.MoveFirst();
-            }
             //remplissage bsRegion
             cboReg.ValueMember = "idRegion";
             cboReg.DisplayMember = "libRegion";
@@ -103,11 +99,6 @@ namespace PPE3_MLK
             cboReg.DataSource = bsRegion;
             cboReg.SelectedIndex = -1;
             pnlResp.Visible = false;
-        }
-
-        private void CboSecteur_DisplayMemberChanged(object sender, EventArgs e)
-        {
-           BsSecteur_CurrentChanged(this, e);
         }
     }
 }

@@ -184,7 +184,6 @@
             this.cboSecteur.Name = "cboSecteur";
             this.cboSecteur.Size = new System.Drawing.Size(121, 21);
             this.cboSecteur.TabIndex = 2;
-            this.cboSecteur.DisplayMemberChanged += new System.EventHandler(this.CboSecteur_DisplayMemberChanged);
             // 
             // bsSecteur
             // 
