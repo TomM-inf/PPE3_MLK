@@ -12,8 +12,12 @@ namespace PPE3_MLK
 {
     public partial class FrmFrais : Form
     {
+        private List<string> mois = new List<string> { "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre" };
+
         public FrmFrais()
         {
+            
+
             InitializeComponent();
             panel1.Visible = false;
             panel2.Visible = false;
@@ -21,15 +25,27 @@ namespace PPE3_MLK
             textBox5.Text = Modele.nomVisiteur();
             Txtnom2.Text = Modele.nomVisiteur();
             txtIdVisiteur.Text = Modele.IDVisiteur();
-            
 
             bsFicheFrais.DataSource = Modele.ListeFiche();
             dgvListFicheFrais.DataSource = bsFicheFrais;
 
-            for (int i = 0; i < dgvListFicheFrais.ColumnCount; i++)
+            
+
+            
+
+
+
+                for (int i = 0; i < dgvListFicheFrais.ColumnCount; i++)
             {
                 dgvListFicheFrais.Columns[i].Visible = false;
             }
+
+
+            
+
+
+             
+
 
             dgvListFicheFrais.Columns["dateModif"].Visible = true;
             dgvListFicheFrais.Columns["dateModif"].DisplayIndex = 1;
@@ -37,7 +53,10 @@ namespace PPE3_MLK
             dgvListFicheFrais.Columns["montantValide"].Visible = true;
             dgvListFicheFrais.Columns["montantValide"].DisplayIndex = 0;
             dgvListFicheFrais.Columns["montantValide"].HeaderText="Montant";
-            dgvListFicheFrais.Columns["idVisiteur"].Visible = false;
+            dgvListFicheFrais.Columns["idVisiteur"].Visible = true;
+
+           
+            
 
             
 
@@ -74,13 +93,20 @@ namespace PPE3_MLK
 
         private void Txt2_TextChanged(object sender, EventArgs e)
         {
-            btnQuitter.Visible = false;
-            btnModif.Visible = true;
+            
         }
 
         private void BsFicheFrais_CurrentChanged(object sender, EventArgs e)
         {
             panel2.Visible = true;
+
+
+            string vretour = "";
+            vretour=((fichefrais)bsFicheFrais.Current).mois.Substring(4, 2);  //on sélectionne 2 caracteres apres le carac 4  de mois
+            int vretour2 = Int32.Parse(vretour); //on met les caracteres en int
+            vretour = mois[vretour2 - 1]; //on prend et réajuste le résultat (la liste commence par 0 mais janvier est le mois N°1)
+            txtDate.Text = vretour; //on affiche dans la case.
+            
         }
     }
 }

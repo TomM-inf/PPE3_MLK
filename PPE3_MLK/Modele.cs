@@ -18,6 +18,8 @@ namespace PPE3_MLK
         public static Visiteur VisiteurConnecte { get => visiteurConnecte; }
         public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
 
+
+
         public static void init()
         {
             maConnexion = new GSB2_GroupeMLKEntities();
@@ -42,6 +44,7 @@ namespace PPE3_MLK
             try
             {
                 visiteurConnecte = (Visiteur)VisiteurParIdentifiant(id);
+                
 
             }
             catch (Exception ex)
@@ -82,7 +85,7 @@ namespace PPE3_MLK
             return vretour;
         }
 
-        public static string nomVisiteur()  //pour afficher le nom et le prénom du gadjo.
+        public static string nomVisiteur()  //pour afficher le nom et le prénom du visiteur.
         {
             string vretour="";
             vretour = VisiteurConnecte.nom + " " + VisiteurConnecte.prenom;
@@ -97,19 +100,12 @@ namespace PPE3_MLK
 
         }
 
-        public static string afficherDate()
-        {
-            string vretour = "";
-
-            return vretour;
-        }
+        
 
         public static List<fichefrais> ListeFiche() //la liste de fiches pour l'afficher ensuite.
         {
-            return maConnexion.fichefrais.ToList();
+            return maConnexion.fichefrais.Where(x => x.idVisiteur == visiteurConnecte.idVisiteur).ToList();
         }
-
-
 
     }
 
