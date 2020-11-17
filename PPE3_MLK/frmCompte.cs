@@ -91,11 +91,19 @@ namespace PPE3_MLK
 
         private void affichageDgvRegion()
         {
+            int longueur = 0;
             dgvRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region.ToList();
             dgvRegion.RowHeadersVisible = false;
 
             //définition de la longueur du dgv en fonction du nombre de ligne
-            int longueur = dgvRegion.Rows[0].Height * dgvRegion.RowCount;
+            try
+            {
+                longueur = dgvRegion.Rows[0].Height * dgvRegion.RowCount;
+            }
+            catch (Exception ex)
+            {
+                longueur = 128;
+            }
             for (int i = 0; i < dgvRegion.ColumnCount; i++)
             {
                 dgvRegion.Columns[i].Visible = false;

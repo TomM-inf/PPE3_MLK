@@ -137,5 +137,15 @@ namespace PPE3_MLK
         {
             return maConnexion.Secteur.ToList();
         }
+
+        public static bool estResponsable() //si la personne est responsable
+        {
+            bool vretour = false;
+            if (visiteurConnecte.Laboratoire.idResponsable == visiteurConnecte.idVisiteur) { }
+            {
+                vretour = true;
+            }
+            return vretour;
+        }
     }
 }

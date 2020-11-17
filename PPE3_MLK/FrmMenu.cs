@@ -17,6 +17,15 @@ namespace PPE3_MLK
         {
             InitializeComponent();
             informationsDuCompteToolStripMenuItem.Alignment = ToolStripItemAlignment.Left;
+            //si le visiteur a des resp alors on affiche la case
+            if (Modele.estResponsable())
+            {
+                administationToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                administationToolStripMenuItem.Visible = false;
+            }
             this.IsMdiContainer = false;
         }
 

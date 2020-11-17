@@ -38,6 +38,7 @@
           <Property Name="id" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="libelle" Type="char" MaxLength="20" />
           <Property Name="montant" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="deplacement" Type="bit" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -45,6 +46,7 @@
           </Key>
           <Property Name="idLabo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nomLabo" Type="char" MaxLength="20" />
+          <Property Name="idResponsable" Type="char" MaxLength="3" />
         </EntityType>
         <EntityType Name="LigneFraisForfait">
           <Key>
@@ -241,6 +243,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ResponsableLabo">
+          <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="0..1" />
+          <End Role="Laboratoire" Type="Self.Laboratoire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visiteur">
+              <PropertyRef Name="idVisiteur" />
+            </Principal>
+            <Dependent Role="Laboratoire">
+              <PropertyRef Name="idResponsable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_SECTEUR">
           <End Role="Secteur" Type="Self.Secteur" Multiplicity="1" />
           <End Role="Region" Type="Self.Region" Multiplicity="*" />
@@ -427,6 +441,10 @@
             <End Role="Laboratoire" EntitySet="Laboratoire" />
             <End Role="Visiteur" EntitySet="Visiteur" />
           </AssociationSet>
+          <AssociationSet Name="FK_ResponsableLabo" Association="Self.FK_ResponsableLabo">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="Laboratoire" EntitySet="Laboratoire" />
+          </AssociationSet>
           <AssociationSet Name="FK_SECTEUR" Association="Self.FK_SECTEUR">
             <End Role="Secteur" EntitySet="Secteur" />
             <End Role="Region" EntitySet="Region" />
@@ -565,6 +583,10 @@
             <End Role="Region" EntitySet="Region" />
             <End Role="Visiteur" EntitySet="Visiteur" />
           </AssociationSet>
+          <AssociationSet Name="FK_ResponsableLabo" Association="GSB2_GroupeMLKModel.FK_ResponsableLabo">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="Laboratoire" EntitySet="Laboratoire" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Etat">
           <Key>
@@ -606,6 +628,7 @@
           <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
           <NavigationProperty Name="LigneFraisForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
+          <Property Name="deplacement" Type="Boolean" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -614,6 +637,8 @@
           <Property Name="idLabo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomLabo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="Visiteur" Relationship="GSB2_GroupeMLKModel.FK_Laboratoire" FromRole="Laboratoire" ToRole="Visiteur" />
+          <Property Name="idResponsable" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Visiteur1" Relationship="GSB2_GroupeMLKModel.FK_ResponsableLabo" FromRole="Laboratoire" ToRole="Visiteur" />
         </EntityType>
         <EntityType Name="LigneFraisForfait">
           <Key>
@@ -751,6 +776,7 @@
           <NavigationProperty Name="Region" Relationship="GSB2_GroupeMLKModel.FK_VISITEUR" FromRole="Visiteur" ToRole="Region" />
           <NavigationProperty Name="Secteur" Relationship="GSB2_GroupeMLKModel.FK_VISITEURSECTEUR" FromRole="Visiteur" ToRole="Secteur" />
           <NavigationProperty Name="Region1" Relationship="GSB2_GroupeMLKModel.Travailler" FromRole="Visiteur" ToRole="Region" />
+          <NavigationProperty Name="Laboratoire1" Relationship="GSB2_GroupeMLKModel.FK_ResponsableLabo" FromRole="Visiteur" ToRole="Laboratoire" />
         </EntityType>
         <Association Name="FK__fichefrai__idEta__5629CD9C">
           <End Type="GSB2_GroupeMLKModel.Etat" Role="Etat" Multiplicity="0..1" />
@@ -952,6 +978,18 @@
           <End Type="GSB2_GroupeMLKModel.Region" Role="Region" Multiplicity="*" />
           <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="*" />
         </Association>
+        <Association Name="FK_ResponsableLabo">
+          <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="0..1" />
+          <End Type="GSB2_GroupeMLKModel.Laboratoire" Role="Laboratoire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visiteur">
+              <PropertyRef Name="idVisiteur" />
+            </Principal>
+            <Dependent Role="Laboratoire">
+              <PropertyRef Name="idResponsable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -989,6 +1027,7 @@
           <EntitySetMapping Name="FraisForfait">
             <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.FraisForfait">
               <MappingFragment StoreEntitySet="FraisForfait">
+                <ScalarProperty Name="deplacement" ColumnName="deplacement" />
                 <ScalarProperty Name="montant" ColumnName="montant" />
                 <ScalarProperty Name="libelle" ColumnName="libelle" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -998,6 +1037,7 @@
           <EntitySetMapping Name="Laboratoire">
             <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.Laboratoire">
               <MappingFragment StoreEntitySet="Laboratoire">
+                <ScalarProperty Name="idResponsable" ColumnName="idResponsable" />
                 <ScalarProperty Name="nomLabo" ColumnName="nomLabo" />
                 <ScalarProperty Name="idLabo" ColumnName="idLabo" />
               </MappingFragment>

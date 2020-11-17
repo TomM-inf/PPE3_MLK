@@ -23,6 +23,7 @@ namespace PPE3_MLK
         public string id { get; set; }
         public string libelle { get; set; }
         public Nullable<decimal> montant { get; set; }
+        public Nullable<bool> deplacement { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LigneFraisForfait> LigneFraisForfait { get; set; }

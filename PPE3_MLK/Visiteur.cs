@@ -22,6 +22,7 @@ namespace PPE3_MLK
             this.Region = new HashSet<Region>();
             this.Secteur = new HashSet<Secteur>();
             this.Region1 = new HashSet<Region>();
+            this.Laboratoire1 = new HashSet<Laboratoire>();
         }
     
         public string idVisiteur { get; set; }
@@ -46,5 +47,7 @@ namespace PPE3_MLK
         public virtual ICollection<Secteur> Secteur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Region> Region1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Laboratoire> Laboratoire1 { get; set; }
     }
 }

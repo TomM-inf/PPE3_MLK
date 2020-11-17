@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.FAMILLE" Width="1.5" PointX="3" PointY="15.125" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.fichefrais" Width="1.5" PointX="8.25" PointY="7.5" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.FraisForfait" Width="1.5" PointX="8.25" PointY="1.125" />
-        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.Laboratoire" Width="1.5" PointX="0.75" PointY="8.125" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.Laboratoire" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.LigneFraisForfait" Width="1.5" PointX="10.5" PointY="6.875" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.LigneFraisHorsForfait" Width="1.5" PointX="10.5" PointY="10.75" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.MEDECIN" Width="1.5" PointX="3" PointY="3.375" />
@@ -38,6 +38,7 @@
         <AssociationConnector Association="GSB2_GroupeMLKModel.FK_VISITEUR" />
         <AssociationConnector Association="GSB2_GroupeMLKModel.FK_VISITEURSECTEUR" />
         <AssociationConnector Association="GSB2_GroupeMLKModel.Travailler" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK_ResponsableLabo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
