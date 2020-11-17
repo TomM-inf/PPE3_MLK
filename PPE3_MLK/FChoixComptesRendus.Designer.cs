@@ -77,6 +77,7 @@
             this.btnModifier.TabIndex = 2;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.BtnModifier_Click);
             // 
             // btnCreer
             // 
@@ -86,6 +87,7 @@
             this.btnCreer.TabIndex = 3;
             this.btnCreer.Text = "Créer";
             this.btnCreer.UseVisualStyleBackColor = true;
+            this.btnCreer.Click += new System.EventHandler(this.BtnCreer_Click);
             // 
             // label2
             // 

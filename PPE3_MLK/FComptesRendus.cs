@@ -17,14 +17,37 @@ namespace PPE3_MLK
             InitializeComponent();
         }
 
-        private void Label8_Click(object sender, EventArgs e)
+        private void FComptesRendus_Load(object sender, EventArgs e)
         {
-            //if 
-        }
+            cboPraticient.ValueMember = "idMedecin";//permet de stocker l'identifiant
+            cboPraticient.DisplayMember = "libMedecin";
+            bsMedecin.DataSource = Modele.listeMedecin();
+            cboPraticient.DataSource = bsMedecin;
+            cboStyle.ValueMember = "idStyle";//permet de stocker l'identifiant
+            cboStyle.DisplayMember = "libStyle";
+            bsStyle.DataSource = Modele.listeStyle();
+            cboStyle.DataSource = bsStyle;
 
-        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+            if (Modele.ActionGestionRapport == 2)
+            {
+                txtNumero.Text = Modele.rapportChoisi.idRapport;
+                dateTimePicker1.Text = Modele.rapportChoisi.dateRapport;
+                cboMotif.Text = Modele.rapportChoisi.idMotif;
+                txtBilan.Text = Modele.rapportChoisi.bilan();
+                //.Text = Modele.rapportChoisi.idVisiteur.ToString();
+                cboPraticient.Text = Modele.rapportChoisi.MEDECIN.libMedecin;
+                cboRemplacent.Text = Modele.rapportChoisi.MEDECIN.libMedecin;
+            }
+        }
+    }
+       /* private void Label8_Click(object sender, EventArgs e)
         {
+            if (chkPresent.Checked == false)
+            {
+                label8.Visible = true;
+                cboRemplacent.Visible = true;
 
-        }
+            }    
+        }*/
     }
 }

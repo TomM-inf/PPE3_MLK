@@ -44,6 +44,7 @@
             this.cboMotif = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dgvEchantillons = new System.Windows.Forms.DataGridView();
+            this.btnValider = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEchantillons)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,7 +155,6 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Praticient Remplacent";
             this.label8.Visible = false;
-            this.label8.Click += new System.EventHandler(this.Label8_Click);
             // 
             // cboRemplacent
             // 
@@ -164,7 +164,6 @@
             this.cboRemplacent.Size = new System.Drawing.Size(187, 21);
             this.cboRemplacent.TabIndex = 14;
             this.cboRemplacent.Visible = false;
-            this.cboRemplacent.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
             // cboMotif
             // 
@@ -189,11 +188,21 @@
             this.dgvEchantillons.Size = new System.Drawing.Size(334, 236);
             this.dgvEchantillons.TabIndex = 17;
             // 
+            // btnValider
+            // 
+            this.btnValider.Location = new System.Drawing.Point(690, 415);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.Size = new System.Drawing.Size(75, 23);
+            this.btnValider.TabIndex = 18;
+            this.btnValider.Text = "Valider";
+            this.btnValider.UseVisualStyleBackColor = true;
+            // 
             // FComptesRendus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnValider);
             this.Controls.Add(this.dgvEchantillons);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.cboMotif);
@@ -236,5 +245,6 @@
         private System.Windows.Forms.ComboBox cboMotif;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dgvEchantillons;
+        private System.Windows.Forms.Button btnValider;
     }
 }

@@ -13,6 +13,11 @@ namespace PPE3_MLK
         private static Visiteur visiteurConnecte;
         private static bool connexionValide;
         private static List<Visiteur> malist;
+        private static int actionGestionRapport;
+        private static RAPPORT rapportChoisi;
+
+        public static int ActionGestionRapport { get => actionGestionRapport; set => actionGestionRapport = value; }
+        public static RAPPORT CompositeurChoisi { get => rapportChoisi; set => rapportChoisi = value; }
 
         public static Visiteur VisiteurConnecte { get => visiteurConnecte; }
         public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
@@ -84,7 +89,7 @@ namespace PPE3_MLK
         {
             var lQuery = maConnexion.RAPPORT.ToList()
                 .Where(x => x.idMedecin == idMedecin)
-                .Select(x => new { x.idRapport, x.dateRapport, x.idMedecin, x.idMotif, x.idVisiteur })//nom prenom medecin pas id 
+                .Select(x => new { x.idRapport, x.dateRapport, x.idMedecin, x.idMotif, x.idVisiteur })//nom prenom medecin pas id pareille motif et client 
                 .OrderBy(x => x.dateRapport);
             return lQuery.ToList();
         }
@@ -92,5 +97,33 @@ namespace PPE3_MLK
         {
             return maConnexion.MEDECIN.ToList();
         }
+        public static bool AjoutRapport(int idRapport, DateTime dateRapport, int idMotif, string bilan, string idVisiteur, int idMedecin)
+        {
+            bool vretour = true;
+            try
+            {
+                rapportChoisi = new RAPPORT();
+                rapportChoisi.idRapport = idRapport;
+                rapportChoisi.dateRapport = dateRapport;
+                rapportChoisi.idMotif = idMotif;
+                rapportChoisi.bilan = bilan;
+                rapportChoisi.idVisiteur = idVisiteur;
+                rapportChoisi.idMedecin = idMedecin;
+                maConnexion.RAPPORT.Add(rapportChoisi);
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                vretour = false;
+            }
+            return vretour;
+        }
+        public static void getRapportParNum(int idRapport)
+        {
+            var LQuery = maConnexion.RAPPORT.ToList()
+                           .Where(x => x.idRapport == idRapport);
+            rapportChoisi = (RAPPORT)LQuery.ToList()[0];
+        }
+
     }
 }
