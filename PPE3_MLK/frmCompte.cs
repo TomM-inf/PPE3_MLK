@@ -23,14 +23,7 @@ namespace PPE3_MLK
             txtRue.Text = ((Visiteur)bsVisiteur.Current).rue.ToString();
             txtCP.Text = ((Visiteur)bsVisiteur.Current).cp.ToString();
             txtVille.Text = ((Visiteur)bsVisiteur.Current).ville.ToString();
-            dgvRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region.ToList();
-            dgvRegion.RowHeadersVisible = false;
-            for (int i = 0; i < dgvRegion.ColumnCount; i++)
-            {
-                dgvRegion.Columns[i].Visible = false;
-            }
-            dgvRegion.Columns["libRegion"].Visible = true;
-            dgvRegion.ColumnHeadersVisible = false;
+            affichageDgvRegion(); //gère l'affichage et la modulation du dgvRegion
         }
 
         private void BtnModifValid_Click(object sender, EventArgs e)
@@ -94,6 +87,31 @@ namespace PPE3_MLK
                 sErreur += "\t\u25C9\tVille visiteur vide\n";
             }
             return erreur;
+        }
+
+        private void affichageDgvRegion()
+        {
+            dgvRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region.ToList();
+            dgvRegion.RowHeadersVisible = false;
+
+            //définition de la longueur du dgv en fonction du nombre de ligne
+            int longueur = dgvRegion.Rows[0].Height * dgvRegion.RowCount;
+            for (int i = 0; i < dgvRegion.ColumnCount; i++)
+            {
+                dgvRegion.Columns[i].Visible = false;
+            }
+            dgvRegion.Columns["libRegion"].Visible = true;
+            dgvRegion.Columns["libRegion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvRegion.ColumnHeadersVisible = false;
+            if (longueur <= 128)
+            {
+                dgvRegion.Size = new System.Drawing.Size(177, longueur);
+                dgvRegion.ScrollBars = ScrollBars.None;
+            }
+            else
+            {
+                dgvRegion.Size = new System.Drawing.Size(177, 128);
+            }
         }
     }
 }

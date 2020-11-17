@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "FrmOrganigrame";
             this.ShowIcon = false;
-            this.Text = "FrmOrganigrame";
+            this.Text = "Hiérarchie";
             this.ResumeLayout(false);
 
         }
