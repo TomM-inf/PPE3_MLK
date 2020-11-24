@@ -88,16 +88,16 @@
     <Compile Include="FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmGestionComptes.cs">
+    <Compile Include="FormAdministration\FrmGestionComptes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmGestionComptes.Designer.cs">
+    <Compile Include="FormAdministration\FrmGestionComptes.Designer.cs">
       <DependentUpon>FrmGestionComptes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListeVisiteur.cs">
+    <Compile Include="FormVisiteur\frmListeVisiteur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListeVisiteur.Designer.cs">
+    <Compile Include="FormVisiteur\frmListeVisiteur.Designer.cs">
       <DependentUpon>frmListeVisiteur.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMenu.cs">
@@ -106,10 +106,10 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmOrganigrame.cs">
+    <Compile Include="FormVisiteur\FrmOrganigrame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOrganigrame.Designer.cs">
+    <Compile Include="FormVisiteur\FrmOrganigrame.Designer.cs">
       <DependentUpon>FrmOrganigrame.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratoire.cs">
@@ -175,16 +175,16 @@
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmGestionComptes.resx">
+    <EmbeddedResource Include="FormAdministration\FrmGestionComptes.resx">
       <DependentUpon>FrmGestionComptes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListeVisiteur.resx">
+    <EmbeddedResource Include="FormVisiteur\frmListeVisiteur.resx">
       <DependentUpon>frmListeVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOrganigrame.resx">
+    <EmbeddedResource Include="FormVisiteur\FrmOrganigrame.resx">
       <DependentUpon>FrmOrganigrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
