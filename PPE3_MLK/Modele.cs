@@ -176,9 +176,11 @@ namespace PPE3_MLK
             maConnexion.SaveChanges();
         }
 
-        public static void modifSecteur()
+        public static void modifSecteur(Secteur monSecteur, string monLibSecteur, Visiteur monResponsable)
         {
-
+            monSecteur.libSecteur = monLibSecteur;
+            monSecteur.Visiteur = monResponsable;
+            maConnexion.SaveChanges();
         }
     }
 }

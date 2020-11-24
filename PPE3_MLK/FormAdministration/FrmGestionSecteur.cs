@@ -44,7 +44,14 @@ namespace PPE3_MLK.FormAdministration
         {
             if (test())
             {
-
+                Modele.modifSecteur((Secteur)bsSecteur.Current,txtLib.Text, (Visiteur)bsResponsable.Current);
+                MessageBox.Show("Le secteur à bien été modifié", "Réussite !");
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show(error, "Erreur !");
+                this.DialogResult = DialogResult.None;
             }
         }
 
@@ -54,7 +61,7 @@ namespace PPE3_MLK.FormAdministration
             if (txtLib.TextLength < 1)
             {
                 vretour = false;
-                error += "\tLe libellé doit être supérieur à 1 caractère\n";
+                error += "\n\t\u25C9 Le libellé doit être supérieur à 1 caractère\n";
             }
             return vretour;
         }
