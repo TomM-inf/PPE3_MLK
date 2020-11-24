@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +46,13 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dgvEchantillons = new System.Windows.Forms.DataGridView();
             this.btnValider = new System.Windows.Forms.Button();
+            this.bsMedecin = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMotif = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEchantillons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMotif)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -145,25 +152,24 @@
             this.chkPresent.TabIndex = 12;
             this.chkPresent.Text = "Présent";
             this.chkPresent.UseVisualStyleBackColor = true;
+            this.chkPresent.CheckedChanged += new System.EventHandler(this.ChkPresent_CheckedChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(461, 80);
+            this.label8.Location = new System.Drawing.Point(3, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 13);
             this.label8.TabIndex = 13;
             this.label8.Text = "Praticient Remplacent";
-            this.label8.Visible = false;
             // 
             // cboRemplacent
             // 
             this.cboRemplacent.FormattingEnabled = true;
-            this.cboRemplacent.Location = new System.Drawing.Point(578, 77);
+            this.cboRemplacent.Location = new System.Drawing.Point(120, 16);
             this.cboRemplacent.Name = "cboRemplacent";
             this.cboRemplacent.Size = new System.Drawing.Size(187, 21);
             this.cboRemplacent.TabIndex = 14;
-            this.cboRemplacent.Visible = false;
             // 
             // cboMotif
             // 
@@ -196,18 +202,28 @@
             this.btnValider.TabIndex = 18;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.BtnValider_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.cboRemplacent);
+            this.panel1.Location = new System.Drawing.Point(453, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(324, 48);
+            this.panel1.TabIndex = 19;
+            this.panel1.Visible = false;
             // 
             // FComptesRendus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.dgvEchantillons);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.cboMotif);
-            this.Controls.Add(this.cboRemplacent);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.chkPresent);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtBilan);
@@ -221,7 +237,12 @@
             this.Controls.Add(this.label1);
             this.Name = "FComptesRendus";
             this.Text = "FComptesRendus";
+            this.Load += new System.EventHandler(this.FComptesRendus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEchantillons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMotif)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +267,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dgvEchantillons;
         private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.BindingSource bsMedecin;
+        private System.Windows.Forms.BindingSource bsMotif;
+        private System.Windows.Forms.Panel panel1;
     }
 }

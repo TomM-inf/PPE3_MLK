@@ -38,13 +38,13 @@ namespace PPE3_MLK
             Modele.ActionGestionRapport = 1;
             FComptesRendus open = new FComptesRendus();
             open.Show();
-//desabled pour ne pas modifier 
+
         }
 
         private void BtnModifier_Click(object sender, EventArgs e)
         {
             System.Type type = bsRapport.Current.GetType();
-            int id = (int)type.GetProperty("N°").GetValue(bsRapport.Current, null);
+            int id = (int)type.GetProperty("idRapport").GetValue(bsRapport.Current, null);
             Modele.getRapportParNum(id);
             Modele.ActionGestionRapport = 2;
             FComptesRendus open = new FComptesRendus();

@@ -17,7 +17,7 @@ namespace PPE3_MLK
         private static RAPPORT rapportChoisi;
 
         public static int ActionGestionRapport { get => actionGestionRapport; set => actionGestionRapport = value; }
-        public static RAPPORT CompositeurChoisi { get => rapportChoisi; set => rapportChoisi = value; }
+        public static RAPPORT RapportChoisi { get => rapportChoisi; set => rapportChoisi = value; }
 
         public static Visiteur VisiteurConnecte { get => visiteurConnecte; }
         public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
@@ -89,13 +89,17 @@ namespace PPE3_MLK
         {
             var lQuery = maConnexion.RAPPORT.ToList()
                 .Where(x => x.idMedecin == idMedecin)
-                .Select(x => new { x.idRapport, x.dateRapport, x.idMedecin, x.idMotif, x.idVisiteur })//nom prenom medecin pas id pareille motif et client 
+                .Select(x => new { x.idRapport, x.dateRapport, x.MEDECIN.nom, x.MOTIF.libMotif, x.idVisiteur })
                 .OrderBy(x => x.dateRapport);
             return lQuery.ToList();
         }
         public static Object listeMedecin()
         {
             return maConnexion.MEDECIN.ToList();
+        }
+        public static Object listeMotif()
+        {
+            return maConnexion.MOTIF.ToList();
         }
         public static bool AjoutRapport(int idRapport, DateTime dateRapport, int idMotif, string bilan, string idVisiteur, int idMedecin)
         {
@@ -107,7 +111,6 @@ namespace PPE3_MLK
                 rapportChoisi.dateRapport = dateRapport;
                 rapportChoisi.idMotif = idMotif;
                 rapportChoisi.bilan = bilan;
-                rapportChoisi.idVisiteur = idVisiteur;
                 rapportChoisi.idMedecin = idMedecin;
                 maConnexion.RAPPORT.Add(rapportChoisi);
                 maConnexion.SaveChanges();
