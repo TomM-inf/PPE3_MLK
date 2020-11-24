@@ -67,6 +67,12 @@
     <Compile Include="fichefrais.cs">
       <DependentUpon>mdlProjetGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormAdministration\FrmGestionSecteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministration\FrmGestionSecteur.Designer.cs">
+      <DependentUpon>FrmGestionSecteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="FraisForfait.cs">
       <DependentUpon>mdlProjetGSB.tt</DependentUpon>
     </Compile>
@@ -166,6 +172,9 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>mdlProjetGSB.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAdministration\FrmGestionSecteur.resx">
+      <DependentUpon>FrmGestionSecteur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmChangementMDP.resx">
       <DependentUpon>FrmChangementMDP.cs</DependentUpon>
     </EmbeddedResource>

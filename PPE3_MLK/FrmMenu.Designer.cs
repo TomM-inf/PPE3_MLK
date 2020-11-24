@@ -123,6 +123,7 @@
             this.gestionDesSecteursToolStripMenuItem.Name = "gestionDesSecteursToolStripMenuItem";
             this.gestionDesSecteursToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.gestionDesSecteursToolStripMenuItem.Text = "Gestion des secteurs";
+            this.gestionDesSecteursToolStripMenuItem.Click += new System.EventHandler(this.GestionDesSecteursToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 

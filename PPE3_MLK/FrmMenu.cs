@@ -75,5 +75,13 @@ namespace PPE3_MLK
             fgc.MdiParent = this;
             fgc.Show();
         }
+
+        private void GestionDesSecteursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            FormAdministration.FrmGestionSecteur fgs = new FormAdministration.FrmGestionSecteur();
+            fgs.MdiParent = this;
+            fgs.Show();
+        }
     }
 }
