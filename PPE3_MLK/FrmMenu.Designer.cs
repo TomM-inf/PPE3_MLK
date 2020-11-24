@@ -37,6 +37,7 @@
             this.hiérarchieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesComptesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDesSecteursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrpMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // informationsDuCompteToolStripMenuItem
             // 
             this.informationsDuCompteToolStripMenuItem.Name = "informationsDuCompteToolStripMenuItem";
-            this.informationsDuCompteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.informationsDuCompteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.informationsDuCompteToolStripMenuItem.Text = "Gestion du compte";
             this.informationsDuCompteToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.informationsDuCompteToolStripMenuItem.Click += new System.EventHandler(this.InformationsDuCompteToolStripMenuItem_Click);
@@ -82,21 +83,21 @@
             // parSecteurToolStripMenuItem
             // 
             this.parSecteurToolStripMenuItem.Name = "parSecteurToolStripMenuItem";
-            this.parSecteurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.parSecteurToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.parSecteurToolStripMenuItem.Text = "Par secteur";
             this.parSecteurToolStripMenuItem.Click += new System.EventHandler(this.ParSecteurToolStripMenuItem_Click);
             // 
             // parRegionToolStripMenuItem
             // 
             this.parRegionToolStripMenuItem.Name = "parRegionToolStripMenuItem";
-            this.parRegionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.parRegionToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.parRegionToolStripMenuItem.Text = "Par region";
             this.parRegionToolStripMenuItem.Click += new System.EventHandler(this.ParRegionToolStripMenuItem_Click);
             // 
             // hiérarchieToolStripMenuItem
             // 
             this.hiérarchieToolStripMenuItem.Name = "hiérarchieToolStripMenuItem";
-            this.hiérarchieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hiérarchieToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.hiérarchieToolStripMenuItem.Text = "Hiérarchie";
             this.hiérarchieToolStripMenuItem.Click += new System.EventHandler(this.HiérarchieToolStripMenuItem_Click);
             // 
@@ -104,7 +105,8 @@
             // 
             this.administationToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.administationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDesComptesToolStripMenuItem});
+            this.gestionDesComptesToolStripMenuItem,
+            this.gestionDesSecteursToolStripMenuItem});
             this.administationToolStripMenuItem.Name = "administationToolStripMenuItem";
             this.administationToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.administationToolStripMenuItem.Text = "Administation";
@@ -115,6 +117,12 @@
             this.gestionDesComptesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.gestionDesComptesToolStripMenuItem.Text = "Gestion des comptes";
             this.gestionDesComptesToolStripMenuItem.Click += new System.EventHandler(this.GestionDesComptesToolStripMenuItem_Click);
+            // 
+            // gestionDesSecteursToolStripMenuItem
+            // 
+            this.gestionDesSecteursToolStripMenuItem.Name = "gestionDesSecteursToolStripMenuItem";
+            this.gestionDesSecteursToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.gestionDesSecteursToolStripMenuItem.Text = "Gestion des secteurs";
             // 
             // FrmMenu
             // 
@@ -144,6 +152,7 @@
         private System.Windows.Forms.ToolStripMenuItem hiérarchieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesComptesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDesSecteursToolStripMenuItem;
     }
 }
 

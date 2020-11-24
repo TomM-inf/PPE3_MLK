@@ -14,9 +14,11 @@ namespace PPE3_MLK
         private static bool connexionValide;
         private static List<Visiteur> malist;
         private static int actionVisiteur;
+        private static int categResp;
         public static Visiteur VisiteurConnecte { get => visiteurConnecte; }
         public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
         public static int ActionVisiteur { get => actionVisiteur; set => actionVisiteur = value; }
+        public static int CategResp { get => categResp;}
 
         public static void init()
         {
@@ -151,9 +153,10 @@ namespace PPE3_MLK
         public static bool estResponsable() //si la personne est responsable
         {
             bool vretour = false;
-            if (visiteurConnecte.Laboratoire.idResponsable == visiteurConnecte.idVisiteur) { }
+            if (visiteurConnecte.Laboratoire.idResponsable == visiteurConnecte.idVisiteur)
             {
                 vretour = true;
+                categResp = 1;
             }
             //ajouter conditions si resp secteur ou region (puis gérer en fonction)
             return vretour;

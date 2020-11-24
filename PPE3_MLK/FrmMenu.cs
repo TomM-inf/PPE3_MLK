@@ -16,11 +16,18 @@ namespace PPE3_MLK
         public FrmMenu()
         {
             InitializeComponent();
+            gestionDesComptesToolStripMenuItem.Visible = false;
+            gestionDesSecteursToolStripMenuItem.Visible = false;
             informationsDuCompteToolStripMenuItem.Alignment = ToolStripItemAlignment.Left;
             //si le visiteur a des resp alors on affiche la case
             if (Modele.estResponsable())
             {
                 administationToolStripMenuItem.Visible = true;
+                if (Modele.CategResp == 1)
+                {
+                    gestionDesComptesToolStripMenuItem.Visible = true;
+                    gestionDesSecteursToolStripMenuItem.Visible = true;
+                }
             }
             else
             {
