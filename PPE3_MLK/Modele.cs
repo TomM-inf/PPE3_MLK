@@ -107,6 +107,35 @@ namespace PPE3_MLK
             return maConnexion.fichefrais.Where(x => x.idVisiteur == visiteurConnecte.idVisiteur).ToList();
         }
 
+        public static List<LigneFraisForfait> ListeLigneFraisForfait() //on lie la table LigneFraisForfait
+        {
+            return maConnexion.LigneFraisForfait.Where(x => x.idVisiteur == visiteurConnecte.idVisiteur).ToList();
+        }
+
+        public static List<FraisForfait> ListeFraisForfait() //on lie la table FraisForfait
+        {
+            return maConnexion.FraisForfait.ToList();
+        }
+        public static Object rembouMoisPasDep(string id,string mois) // objet batard qui sert SEULEMENT a la visualisation d'une fiche cloturée 
+        {
+           
+            
+ 
+            var LQuery = maConnexion.LigneFraisForfait
+                .Where(x => x.idVisiteur == id && x.mois==mois && x.FraisForfait.deplacement==false).Select(x=> new { x.FraisForfait.libelle, x.quantite, x.FraisForfait.montant,total= x.FraisForfait.montant * x.quantite, x.idFraisForfait }) ;
+
+
+            return LQuery.ToList();
+        }
+
+        public static Object FraisHorsForfait(string id, string mois)
+        {
+           var LQuery =  maConnexion.LigneFraisHorsForfait.Where(x => x.idVisiteur == visiteurConnecte.idVisiteur).ToList()
+                .Where(x => x.idVisiteur == id && x.mois == mois);
+
+            return LQuery;
+        }
+
     }
 
 }

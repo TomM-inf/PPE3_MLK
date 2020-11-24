@@ -38,6 +38,7 @@
           <Property Name="id" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="libelle" Type="char" MaxLength="20" />
           <Property Name="montant" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="deplacement" Type="bit" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -45,6 +46,7 @@
           </Key>
           <Property Name="idLabo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nomLabo" Type="char" MaxLength="20" />
+          <Property Name="idResponsable" Type="char" MaxLength="3" />
         </EntityType>
         <EntityType Name="LigneFraisForfait">
           <Key>
@@ -164,6 +166,7 @@
           <Property Name="dateEmbauche" Type="char" MaxLength="10" />
           <Property Name="identifiant" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="etatCompte" Type="bit" />
         </EntityType>
         <Association Name="FK__fichefrai__idEta__5629CD9C">
           <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
@@ -238,6 +241,18 @@
             </Principal>
             <Dependent Role="Visiteur">
               <PropertyRef Name="idLabo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResponsableLabo">
+          <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="0..1" />
+          <End Role="Laboratoire" Type="Self.Laboratoire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visiteur">
+              <PropertyRef Name="idVisiteur" />
+            </Principal>
+            <Dependent Role="Laboratoire">
+              <PropertyRef Name="idResponsable" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -427,6 +442,10 @@
             <End Role="Laboratoire" EntitySet="Laboratoire" />
             <End Role="Visiteur" EntitySet="Visiteur" />
           </AssociationSet>
+          <AssociationSet Name="FK_ResponsableLabo" Association="Self.FK_ResponsableLabo">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="Laboratoire" EntitySet="Laboratoire" />
+          </AssociationSet>
           <AssociationSet Name="FK_SECTEUR" Association="Self.FK_SECTEUR">
             <End Role="Secteur" EntitySet="Secteur" />
             <End Role="Region" EntitySet="Region" />
@@ -484,7 +503,6 @@
           <EntitySet Name="Etat" EntityType="GSB2_GroupeMLKModel.Etat" />
           <EntitySet Name="FAMILLE" EntityType="GSB2_GroupeMLKModel.FAMILLE" />
           <EntitySet Name="fichefrais" EntityType="GSB2_GroupeMLKModel.fichefrais" />
-          <EntitySet Name="FraisForfait" EntityType="GSB2_GroupeMLKModel.FraisForfait" />
           <EntitySet Name="Laboratoire" EntityType="GSB2_GroupeMLKModel.Laboratoire" />
           <EntitySet Name="LigneFraisForfait" EntityType="GSB2_GroupeMLKModel.LigneFraisForfait" />
           <EntitySet Name="LigneFraisHorsForfait" EntityType="GSB2_GroupeMLKModel.LigneFraisHorsForfait" />
@@ -516,10 +534,6 @@
           <AssociationSet Name="FK__LigneFraisHorsFo__656C112C" Association="GSB2_GroupeMLKModel.FK__LigneFraisHorsFo__656C112C">
             <End Role="fichefrais" EntitySet="fichefrais" />
             <End Role="LigneFraisHorsForfait" EntitySet="LigneFraisHorsForfait" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LigneFrai__idFra__5DCAEF64" Association="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64">
-            <End Role="FraisForfait" EntitySet="FraisForfait" />
-            <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
           </AssociationSet>
           <AssociationSet Name="FK_Laboratoire" Association="GSB2_GroupeMLKModel.FK_Laboratoire">
             <End Role="Laboratoire" EntitySet="Laboratoire" />
@@ -565,6 +579,15 @@
             <End Role="Region" EntitySet="Region" />
             <End Role="Visiteur" EntitySet="Visiteur" />
           </AssociationSet>
+          <EntitySet Name="FraisForfait" EntityType="GSB2_GroupeMLKModel.FraisForfait" />
+          <AssociationSet Name="FK__LigneFrai__idFra__5DCAEF64" Association="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64">
+            <End Role="FraisForfait" EntitySet="FraisForfait" />
+            <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResponsableLabo" Association="GSB2_GroupeMLKModel.FK_ResponsableLabo">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="Laboratoire" EntitySet="Laboratoire" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Etat">
           <Key>
@@ -598,15 +621,6 @@
           <NavigationProperty Name="LigneFraisForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFraisForfai__5CD6CB2B" FromRole="fichefrais" ToRole="LigneFraisForfait" />
           <NavigationProperty Name="LigneFraisHorsForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFraisHorsFo__656C112C" FromRole="fichefrais" ToRole="LigneFraisHorsForfait" />
         </EntityType>
-        <EntityType Name="FraisForfait">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
-          <NavigationProperty Name="LigneFraisForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
-        </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
             <PropertyRef Name="idLabo" />
@@ -614,6 +628,8 @@
           <Property Name="idLabo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomLabo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="Visiteur" Relationship="GSB2_GroupeMLKModel.FK_Laboratoire" FromRole="Laboratoire" ToRole="Visiteur" />
+          <Property Name="idResponsable" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Visiteur1" Relationship="GSB2_GroupeMLKModel.FK_ResponsableLabo" FromRole="Laboratoire" ToRole="Visiteur" />
         </EntityType>
         <EntityType Name="LigneFraisForfait">
           <Key>
@@ -751,6 +767,8 @@
           <NavigationProperty Name="Region" Relationship="GSB2_GroupeMLKModel.FK_VISITEUR" FromRole="Visiteur" ToRole="Region" />
           <NavigationProperty Name="Secteur" Relationship="GSB2_GroupeMLKModel.FK_VISITEURSECTEUR" FromRole="Visiteur" ToRole="Secteur" />
           <NavigationProperty Name="Region1" Relationship="GSB2_GroupeMLKModel.Travailler" FromRole="Visiteur" ToRole="Region" />
+          <Property Name="etatCompte" Type="Boolean" />
+          <NavigationProperty Name="Laboratoire1" Relationship="GSB2_GroupeMLKModel.FK_ResponsableLabo" FromRole="Visiteur" ToRole="Laboratoire" />
         </EntityType>
         <Association Name="FK__fichefrai__idEta__5629CD9C">
           <End Type="GSB2_GroupeMLKModel.Etat" Role="Etat" Multiplicity="0..1" />
@@ -813,18 +831,6 @@
             <Dependent Role="LigneFraisHorsForfait">
               <PropertyRef Name="idVisiteur" />
               <PropertyRef Name="mois" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__LigneFrai__idFra__5DCAEF64">
-          <End Type="GSB2_GroupeMLKModel.FraisForfait" Role="FraisForfait" Multiplicity="1" />
-          <End Type="GSB2_GroupeMLKModel.LigneFraisForfait" Role="LigneFraisForfait" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FraisForfait">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="LigneFraisForfait">
-              <PropertyRef Name="idFraisForfait" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -952,6 +958,40 @@
           <End Type="GSB2_GroupeMLKModel.Region" Role="Region" Multiplicity="*" />
           <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="*" />
         </Association>
+        <EntityType Name="FraisForfait">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="deplacement" Type="Boolean" />
+          <NavigationProperty Name="LigneFraisForfait" Relationship="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
+        </EntityType>
+        <Association Name="FK__LigneFrai__idFra__5DCAEF64">
+          <End Type="GSB2_GroupeMLKModel.FraisForfait" Role="FraisForfait" Multiplicity="1" />
+          <End Type="GSB2_GroupeMLKModel.LigneFraisForfait" Role="LigneFraisForfait" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FraisForfait">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="LigneFraisForfait">
+              <PropertyRef Name="idFraisForfait" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResponsableLabo">
+          <End Type="GSB2_GroupeMLKModel.Visiteur" Role="Visiteur" Multiplicity="0..1" />
+          <End Type="GSB2_GroupeMLKModel.Laboratoire" Role="Laboratoire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visiteur">
+              <PropertyRef Name="idVisiteur" />
+            </Principal>
+            <Dependent Role="Laboratoire">
+              <PropertyRef Name="idResponsable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -986,18 +1026,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FraisForfait">
-            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.FraisForfait">
-              <MappingFragment StoreEntitySet="FraisForfait">
-                <ScalarProperty Name="montant" ColumnName="montant" />
-                <ScalarProperty Name="libelle" ColumnName="libelle" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Laboratoire">
             <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.Laboratoire">
               <MappingFragment StoreEntitySet="Laboratoire">
+                <ScalarProperty Name="idResponsable" ColumnName="idResponsable" />
                 <ScalarProperty Name="nomLabo" ColumnName="nomLabo" />
                 <ScalarProperty Name="idLabo" ColumnName="idLabo" />
               </MappingFragment>
@@ -1109,6 +1141,7 @@
           <EntitySetMapping Name="Visiteur">
             <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.Visiteur">
               <MappingFragment StoreEntitySet="Visiteur">
+                <ScalarProperty Name="etatCompte" ColumnName="etatCompte" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="identifiant" ColumnName="identifiant" />
                 <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />
@@ -1130,6 +1163,16 @@
               <ScalarProperty Name="idRegion" ColumnName="idRegion" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="FraisForfait">
+            <EntityTypeMapping TypeName="GSB2_GroupeMLKModel.FraisForfait">
+              <MappingFragment StoreEntitySet="FraisForfait">
+                <ScalarProperty Name="deplacement" ColumnName="deplacement" />
+                <ScalarProperty Name="montant" ColumnName="montant" />
+                <ScalarProperty Name="libelle" ColumnName="libelle" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

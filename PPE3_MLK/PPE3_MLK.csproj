@@ -88,6 +88,12 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="JePoseUnBoutDeLaFonctionAjouter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JePoseUnBoutDeLaFonctionAjouter.Designer.cs">
+      <DependentUpon>JePoseUnBoutDeLaFonctionAjouter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Laboratoire.cs">
       <DependentUpon>mdlProjetGSB.tt</DependentUpon>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JePoseUnBoutDeLaFonctionAjouter.resx">
+      <DependentUpon>JePoseUnBoutDeLaFonctionAjouter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

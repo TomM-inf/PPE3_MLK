@@ -100,13 +100,51 @@ namespace PPE3_MLK
         {
             panel2.Visible = true;
 
-
+            //AFFICHER LA DATE////////////////////////////////////////////////////////////////////////////////////////////////
             string vretour = "";
             vretour=((fichefrais)bsFicheFrais.Current).mois.Substring(4, 2);  //on sélectionne 2 caracteres apres le carac 4  de mois
             int vretour2 = Int32.Parse(vretour); //on met les caracteres en int
             vretour = mois[vretour2 - 1]; //on prend et réajuste le résultat (la liste commence par 0 mais janvier est le mois N°1)
             txtDate.Text = vretour; //on affiche dans la case.
+            //FIN DATE //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+            //DGV FRAIS FORFAITAIRES////////////////////////////////////////////////////////////////////////////////////////
+            bsFraisForfait.DataSource = Modele.rembouMoisPasDep(((fichefrais)bsFicheFrais.Current).idVisiteur, ((fichefrais)bsFicheFrais.Current).mois);
+
+            dgv1.DataSource = bsFraisForfait;
+
+            dgv1.Columns[4].Visible = false;
+
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+            //DGV HORS FORFAIT//////////////////////////////////////////////////////////////////////////////////////////
+
+            bsFraisHorsForfait.DataSource = Modele.FraisHorsForfait(((fichefrais)bsFicheFrais.Current).idVisiteur, ((fichefrais)bsFicheFrais.Current).mois);
+
+            dgv2.DataSource = bsFraisHorsForfait;
+
+
+
+
+            /*for (int i = 0; i < dgv2.ColumnCount; i++) //afficher QUE les bonnes colonnes
+            {
+                dgv2.Columns[i].Visible = false;
+            }*/
             
+            dgv2.Columns[0].Visible = false;
+            //dgv2.Columns[1].Visible = false;
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
         }
     }
 }

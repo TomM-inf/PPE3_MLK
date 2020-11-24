@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.Etat" Width="1.5" PointX="6" PointY="1.125" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.FAMILLE" Width="1.5" PointX="3" PointY="15.125" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.fichefrais" Width="1.5" PointX="8.25" PointY="7.5" />
-        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.FraisForfait" Width="1.5" PointX="8.25" PointY="1.125" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.Laboratoire" Width="1.5" PointX="0.75" PointY="8.125" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.LigneFraisForfait" Width="1.5" PointX="10.5" PointY="6.875" />
         <EntityTypeShape EntityType="GSB2_GroupeMLKModel.LigneFraisHorsForfait" Width="1.5" PointX="10.5" PointY="10.75" />
@@ -26,7 +25,6 @@
         <AssociationConnector Association="GSB2_GroupeMLKModel.FK__fichefrai__idVis__571DF1D5" />
         <AssociationConnector Association="GSB2_GroupeMLKModel.FK__LigneFraisForfai__5CD6CB2B" />
         <AssociationConnector Association="GSB2_GroupeMLKModel.FK__LigneFraisHorsFo__656C112C" />
-        <AssociationConnector Association="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64" />
         <AssociationConnector Association="GSB2_GroupeMLKModel.FK_Laboratoire" />
         <AssociationConnector Association="GSB2_GroupeMLKModel.medecin_fk" />
         <AssociationConnector Association="GSB2_GroupeMLKModel.rapport_fk2" />
@@ -38,6 +36,9 @@
         <AssociationConnector Association="GSB2_GroupeMLKModel.FK_VISITEUR" />
         <AssociationConnector Association="GSB2_GroupeMLKModel.FK_VISITEURSECTEUR" />
         <AssociationConnector Association="GSB2_GroupeMLKModel.Travailler" />
+        <EntityTypeShape EntityType="GSB2_GroupeMLKModel.FraisForfait" Width="1.5" PointX="8.375" PointY="0.875" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK__LigneFrai__idFra__5DCAEF64" />
+        <AssociationConnector Association="GSB2_GroupeMLKModel.FK_ResponsableLabo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
