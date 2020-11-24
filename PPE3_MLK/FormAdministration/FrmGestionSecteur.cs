@@ -12,6 +12,7 @@ namespace PPE3_MLK.FormAdministration
 {
     public partial class FrmGestionSecteur : Form
     {
+        string error = "Erreur :\n";
         public FrmGestionSecteur()
         {
             InitializeComponent();
@@ -31,12 +32,31 @@ namespace PPE3_MLK.FormAdministration
         private void BtnModifier_Click(object sender, EventArgs e)
         {
             pnlSecteur.Visible = true;
-            bsResponsable.DataSource = Modele.listeVisiteurParSecteur((Secteur)bsSecteur.Current);
+            bsResponsable.DataSource = Modele.listevisiteur();
             txtLib.Text = ((Secteur)bsSecteur.Current).libSecteur;
             cboResp.ValueMember = "idVisiteur";
             cboResp.DisplayMember = "nom";
             cboResp.DataSource = bsResponsable;
             cboResp.SelectedIndex = -1;
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            if (test())
+            {
+
+            }
+        }
+
+        private bool test()
+        {
+            bool vretour = true;
+            if (txtLib.TextLength < 1)
+            {
+                vretour = false;
+                error += "\tLe libellé doit être supérieur à 1 caractère\n";
+            }
+            return vretour;
         }
     }
 }

@@ -33,12 +33,12 @@
             this.cboSecteur = new System.Windows.Forms.ComboBox();
             this.btnModifier = new System.Windows.Forms.Button();
             this.pnlSecteur = new System.Windows.Forms.Panel();
-            this.txtLib = new System.Windows.Forms.TextBox();
-            this.lblLibSecteur = new System.Windows.Forms.Label();
-            this.lblResp = new System.Windows.Forms.Label();
-            this.cboResp = new System.Windows.Forms.ComboBox();
-            this.bsResponsable = new System.Windows.Forms.BindingSource(this.components);
             this.btnSave = new System.Windows.Forms.Button();
+            this.cboResp = new System.Windows.Forms.ComboBox();
+            this.lblResp = new System.Windows.Forms.Label();
+            this.lblLibSecteur = new System.Windows.Forms.Label();
+            this.txtLib = new System.Windows.Forms.TextBox();
+            this.bsResponsable = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsSecteur)).BeginInit();
             this.pnlSecteur.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsResponsable)).BeginInit();
@@ -74,21 +74,23 @@
             this.pnlSecteur.Size = new System.Drawing.Size(650, 214);
             this.pnlSecteur.TabIndex = 2;
             // 
-            // txtLib
+            // btnSave
             // 
-            this.txtLib.Location = new System.Drawing.Point(87, 9);
-            this.txtLib.Name = "txtLib";
-            this.txtLib.Size = new System.Drawing.Size(121, 20);
-            this.txtLib.TabIndex = 0;
+            this.btnSave.Location = new System.Drawing.Point(87, 63);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Sauvegarder";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // lblLibSecteur
+            // cboResp
             // 
-            this.lblLibSecteur.AutoSize = true;
-            this.lblLibSecteur.Location = new System.Drawing.Point(6, 12);
-            this.lblLibSecteur.Name = "lblLibSecteur";
-            this.lblLibSecteur.Size = new System.Drawing.Size(43, 13);
-            this.lblLibSecteur.TabIndex = 1;
-            this.lblLibSecteur.Text = "Libellé :";
+            this.cboResp.FormattingEnabled = true;
+            this.cboResp.Location = new System.Drawing.Point(87, 36);
+            this.cboResp.Name = "cboResp";
+            this.cboResp.Size = new System.Drawing.Size(121, 21);
+            this.cboResp.TabIndex = 3;
             // 
             // lblResp
             // 
@@ -99,22 +101,21 @@
             this.lblResp.TabIndex = 2;
             this.lblResp.Text = "Responsable :";
             // 
-            // cboResp
+            // lblLibSecteur
             // 
-            this.cboResp.FormattingEnabled = true;
-            this.cboResp.Location = new System.Drawing.Point(87, 36);
-            this.cboResp.Name = "cboResp";
-            this.cboResp.Size = new System.Drawing.Size(121, 21);
-            this.cboResp.TabIndex = 3;
+            this.lblLibSecteur.AutoSize = true;
+            this.lblLibSecteur.Location = new System.Drawing.Point(6, 12);
+            this.lblLibSecteur.Name = "lblLibSecteur";
+            this.lblLibSecteur.Size = new System.Drawing.Size(43, 13);
+            this.lblLibSecteur.TabIndex = 1;
+            this.lblLibSecteur.Text = "Libellé :";
             // 
-            // btnSave
+            // txtLib
             // 
-            this.btnSave.Location = new System.Drawing.Point(87, 63);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Sauvegarder";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.txtLib.Location = new System.Drawing.Point(87, 9);
+            this.txtLib.Name = "txtLib";
+            this.txtLib.Size = new System.Drawing.Size(121, 20);
+            this.txtLib.TabIndex = 0;
             // 
             // FrmGestionSecteur
             // 
