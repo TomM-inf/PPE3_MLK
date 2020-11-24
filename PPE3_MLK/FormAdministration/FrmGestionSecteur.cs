@@ -27,5 +27,16 @@ namespace PPE3_MLK.FormAdministration
         {
             this.MdiParent.IsMdiContainer = false;
         }
+
+        private void BtnModifier_Click(object sender, EventArgs e)
+        {
+            pnlSecteur.Visible = true;
+            bsResponsable.DataSource = Modele.listeVisiteurParSecteur((Secteur)bsSecteur.Current);
+            txtLib.Text = ((Secteur)bsSecteur.Current).libSecteur;
+            cboResp.ValueMember = "idVisiteur";
+            cboResp.DisplayMember = "nom";
+            cboResp.DataSource = bsResponsable;
+            cboResp.SelectedIndex = -1;
+        }
     }
 }

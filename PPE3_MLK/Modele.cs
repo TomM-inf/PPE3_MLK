@@ -149,6 +149,14 @@ namespace PPE3_MLK
         {
             return maConnexion.Visiteur.ToList();
         }
+        public static Object listeVisiteurParSecteur(Secteur monSecteur)
+        {
+            Object vretour = null;
+            var LQuery = maConnexion.Visiteur.ToList()
+                .Where(x => x.Secteur.Contains(monSecteur));
+            vretour = LQuery;
+            return vretour;
+        }
 
         public static bool estResponsable() //si la personne est responsable
         {
@@ -166,6 +174,11 @@ namespace PPE3_MLK
         {
             visiteurSelectionne.etatCompte = etat;
             maConnexion.SaveChanges();
+        }
+
+        public static void modifSecteur()
+        {
+
         }
     }
 }
