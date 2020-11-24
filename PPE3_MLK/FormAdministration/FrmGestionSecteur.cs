@@ -37,7 +37,7 @@ namespace PPE3_MLK.FormAdministration
             cboResp.ValueMember = "idVisiteur";
             cboResp.DisplayMember = "nom";
             cboResp.DataSource = bsResponsable;
-            cboResp.SelectedIndex = -1;
+            cboResp.SelectedItem = ((Secteur)bsSecteur.Current).Visiteur;
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
