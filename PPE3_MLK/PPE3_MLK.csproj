@@ -73,6 +73,12 @@
     <Compile Include="FormAdministration\FrmGestionSecteur.Designer.cs">
       <DependentUpon>FrmGestionSecteur.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdministration\FrmGestionRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministration\FrmGestionRegion.Designer.cs">
+      <DependentUpon>FrmGestionRegion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FraisForfait.cs">
       <DependentUpon>mdlProjetGSB.tt</DependentUpon>
     </Compile>
