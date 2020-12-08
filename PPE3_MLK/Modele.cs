@@ -14,7 +14,7 @@ namespace PPE3_MLK
         private static bool connexionValide;
         private static List<Visiteur> malist;
         private static int actionVisiteur;
-        private static int categResp;
+        private static int categResp; //1 resp labo ; 2 resp secteur ; 3 resp region
         public static Visiteur VisiteurConnecte { get => visiteurConnecte; }
         public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
         public static int ActionVisiteur { get => actionVisiteur; set => actionVisiteur = value; }
@@ -154,7 +154,32 @@ namespace PPE3_MLK
             Object vretour = null;
             var LQuery = maConnexion.Visiteur.ToList()
                 .Where(x => x.Secteur.Contains(monSecteur));
-            vretour = LQuery;
+            if (LQuery.ToList().Count() > 1)
+            {
+                vretour = LQuery;
+            }
+
+            return vretour;
+        }
+
+        public static List<Visiteur> listeVisiteurSecteur(Secteur monSecteur)
+        {
+            List<Visiteur> vretour = null;
+            foreach (Visiteur v in maConnexion.Visiteur)
+            {
+                foreach (Secteur c in v.Secteur)
+                {
+                    if (c.idSecteur == monSecteur.idSecteur)
+                    {
+                        if(vretour == null)
+                        {
+                            vretour = new List<Visiteur>();
+                        }
+                        vretour.Add(v);
+                        break;
+                    }
+                }
+            }
             return vretour;
         }
 
@@ -167,6 +192,17 @@ namespace PPE3_MLK
                 categResp = 1;
             }
             //ajouter conditions si resp secteur ou region (puis gérer en fonction)
+            /* RESP SECTEUR
+             * On explore toutes la liste des secteurs
+             */
+            foreach(Secteur c in maConnexion.Secteur)
+            {
+                if(visiteurConnecte.idVisiteur == c.idVisiteur)
+                {
+                    vretour = true;
+                    categResp = 2;
+                }
+            }
             return vretour;
         }
 

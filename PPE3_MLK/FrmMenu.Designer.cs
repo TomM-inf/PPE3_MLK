@@ -38,6 +38,7 @@
             this.administationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesComptesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesSecteursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDesRégionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrpMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +107,8 @@
             this.administationToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.administationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDesComptesToolStripMenuItem,
-            this.gestionDesSecteursToolStripMenuItem});
+            this.gestionDesSecteursToolStripMenuItem,
+            this.gestionDesRégionsToolStripMenuItem});
             this.administationToolStripMenuItem.Name = "administationToolStripMenuItem";
             this.administationToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.administationToolStripMenuItem.Text = "Administation";
@@ -124,6 +126,12 @@
             this.gestionDesSecteursToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.gestionDesSecteursToolStripMenuItem.Text = "Gestion des secteurs";
             this.gestionDesSecteursToolStripMenuItem.Click += new System.EventHandler(this.GestionDesSecteursToolStripMenuItem_Click);
+            // 
+            // gestionDesRégionsToolStripMenuItem
+            // 
+            this.gestionDesRégionsToolStripMenuItem.Name = "gestionDesRégionsToolStripMenuItem";
+            this.gestionDesRégionsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.gestionDesRégionsToolStripMenuItem.Text = "Gestion des régions";
             // 
             // FrmMenu
             // 
@@ -154,6 +162,7 @@
         private System.Windows.Forms.ToolStripMenuItem administationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesComptesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesSecteursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDesRégionsToolStripMenuItem;
     }
 }
 

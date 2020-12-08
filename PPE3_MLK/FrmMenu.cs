@@ -23,10 +23,15 @@ namespace PPE3_MLK
             if (Modele.estResponsable())
             {
                 administationToolStripMenuItem.Visible = true;
-                if (Modele.CategResp == 1)
+                if (Modele.CategResp == 1) //si resp labo
                 {
                     gestionDesComptesToolStripMenuItem.Visible = true;
                     gestionDesSecteursToolStripMenuItem.Visible = true;
+                }
+                if(Modele.CategResp == 2) //si resp secteur
+                {
+                    gestionDesComptesToolStripMenuItem.Visible = true;
+                    gestionDesRégionsToolStripMenuItem.Visible = true;
                 }
             }
             else
