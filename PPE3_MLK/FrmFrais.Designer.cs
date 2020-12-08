@@ -35,6 +35,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnModif = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.Txtnom2 = new System.Windows.Forms.TextBox();
             this.txtTotalFrais = new System.Windows.Forms.TextBox();
             this.txtTotalDate = new System.Windows.Forms.TextBox();
@@ -50,17 +52,15 @@
             this.bsLigneFraisForfait = new System.Windows.Forms.BindingSource(this.components);
             this.bsFraisHorsForfait = new System.Windows.Forms.BindingSource(this.components);
             this.bsFraisForfait = new System.Windows.Forms.BindingSource(this.components);
-            this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.dgv2 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLigneFraisForfait)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFraisHorsForfait)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFraisForfait)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -128,6 +128,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(505, 488);
             this.panel2.TabIndex = 2;
+            // 
+            // dgv2
+            // 
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Location = new System.Drawing.Point(27, 274);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.Size = new System.Drawing.Size(407, 150);
+            this.dgv2.TabIndex = 11;
+            // 
+            // dgv1
+            // 
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(27, 105);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(407, 152);
+            this.dgv1.TabIndex = 4;
             // 
             // Txtnom2
             // 
@@ -231,22 +247,6 @@
             this.textBox5.Size = new System.Drawing.Size(151, 20);
             this.textBox5.TabIndex = 5;
             // 
-            // dgv1
-            // 
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(27, 105);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(407, 152);
-            this.dgv1.TabIndex = 4;
-            // 
-            // dgv2
-            // 
-            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv2.Location = new System.Drawing.Point(27, 274);
-            this.dgv2.Name = "dgv2";
-            this.dgv2.Size = new System.Drawing.Size(407, 150);
-            this.dgv2.TabIndex = 11;
-            // 
             // FrmFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,16 +259,17 @@
             this.Controls.Add(this.textBox5);
             this.Name = "FrmFrais";
             this.Text = "FrmFrais";
+            this.Load += new System.EventHandler(this.FrmFrais_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListFicheFrais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFicheFrais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLigneFraisForfait)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFraisHorsForfait)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFraisForfait)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
