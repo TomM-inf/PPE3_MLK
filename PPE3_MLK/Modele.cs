@@ -101,13 +101,12 @@ namespace PPE3_MLK
         {
             return maConnexion.MOTIF.ToList();
         }
-        public static bool AjoutRapport(int idRapport, DateTime dateRapport, int idMotif, string bilan, string idVisiteur, int idMedecin)
+        public static bool AjoutRapport(DateTime dateRapport, int idMotif, string bilan, string idVisiteur, int idMedecin)
         {
             bool vretour = true;
             try
             {
                 rapportChoisi = new RAPPORT();
-                rapportChoisi.idRapport = idRapport;
                 rapportChoisi.dateRapport = dateRapport;
                 rapportChoisi.idMotif = idMotif;
                 rapportChoisi.bilan = bilan;
@@ -118,14 +117,47 @@ namespace PPE3_MLK
             catch (Exception ex)
             {
                 vretour = false;
+                init();
             }
             return vretour;
         }
+        public static bool ModifRapport(DateTime dateRapport, int idMotif, string bilan, string idVisiteur, int idMedecin)
+        {
+            bool vretour = true;
+            try
+            {
+                rapportChoisi.dateRapport = dateRapport;
+                rapportChoisi.idMotif = idMotif;
+                rapportChoisi.bilan = bilan;
+                rapportChoisi.idMedecin = idMedecin;
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                vretour = false;
+                init();
+            }
+            return vretour;
+        }
+
         public static void getRapportParNum(int idRapport)
         {
             var LQuery = maConnexion.RAPPORT.ToList()
-                           .Where(x => x.idRapport == idRapport);
+                    .Where(x => x.idRapport == idRapport);
             rapportChoisi = (RAPPORT)LQuery.ToList()[0];
+        }
+
+        public static int idRapport()
+        {
+            int vretour = maConnexion.RAPPORT.Count()+1;
+            foreach(RAPPORT R in maConnexion.RAPPORT)
+            {
+                if (vretour == R.idRapport)
+                {
+                    vretour += 1;
+                }
+            }
+            return vretour;
         }
 
     }

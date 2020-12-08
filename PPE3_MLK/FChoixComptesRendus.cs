@@ -35,6 +35,9 @@ namespace PPE3_MLK
         }
         private void btnVisionner_Click(object sender, EventArgs e)
         {
+            System.Type type = bsRapport.Current.GetType();
+            int id = (int)type.GetProperty("idRapport").GetValue(bsRapport.Current, null);
+            Modele.getRapportParNum(id);
             Modele.ActionGestionRapport = 1;
             FComptesRendus open = new FComptesRendus();
             open.Show();
