@@ -33,10 +33,11 @@
             this.btnModifier = new System.Windows.Forms.Button();
             this.pnlRegion = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblLibRegion = new System.Windows.Forms.Label();
+            this.lblResp = new System.Windows.Forms.Label();
+            this.txtLib = new System.Windows.Forms.TextBox();
+            this.cboResp = new System.Windows.Forms.ComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.pnlRegion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,10 +60,11 @@
             // 
             // pnlRegion
             // 
-            this.pnlRegion.Controls.Add(this.comboBox1);
-            this.pnlRegion.Controls.Add(this.textBox1);
-            this.pnlRegion.Controls.Add(this.label2);
-            this.pnlRegion.Controls.Add(this.label1);
+            this.pnlRegion.Controls.Add(this.btnSave);
+            this.pnlRegion.Controls.Add(this.cboResp);
+            this.pnlRegion.Controls.Add(this.txtLib);
+            this.pnlRegion.Controls.Add(this.lblResp);
+            this.pnlRegion.Controls.Add(this.lblLibRegion);
             this.pnlRegion.Location = new System.Drawing.Point(13, 71);
             this.pnlRegion.Name = "pnlRegion";
             this.pnlRegion.Size = new System.Drawing.Size(464, 262);
@@ -73,38 +75,47 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label1
+            // lblLibRegion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.lblLibRegion.AutoSize = true;
+            this.lblLibRegion.Location = new System.Drawing.Point(7, 10);
+            this.lblLibRegion.Name = "lblLibRegion";
+            this.lblLibRegion.Size = new System.Drawing.Size(43, 13);
+            this.lblLibRegion.TabIndex = 0;
+            this.lblLibRegion.Text = "Libellé :";
             // 
-            // label2
+            // lblResp
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.lblResp.AutoSize = true;
+            this.lblResp.Location = new System.Drawing.Point(7, 35);
+            this.lblResp.Name = "lblResp";
+            this.lblResp.Size = new System.Drawing.Size(75, 13);
+            this.lblResp.TabIndex = 1;
+            this.lblResp.Text = "Responsable :";
             // 
-            // textBox1
+            // txtLib
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtLib.Location = new System.Drawing.Point(88, 6);
+            this.txtLib.Name = "txtLib";
+            this.txtLib.Size = new System.Drawing.Size(121, 20);
+            this.txtLib.TabIndex = 2;
             // 
-            // comboBox1
+            // cboResp
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(75, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cboResp.FormattingEnabled = true;
+            this.cboResp.Location = new System.Drawing.Point(88, 32);
+            this.cboResp.Name = "cboResp";
+            this.cboResp.Size = new System.Drawing.Size(121, 21);
+            this.cboResp.TabIndex = 3;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(88, 60);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Sauvegarde";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // FormGestionRegion
             // 
@@ -116,6 +127,7 @@
             this.Controls.Add(this.cboSecteur);
             this.Name = "FormGestionRegion";
             this.Text = "FormGestionRegion";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGestionRegion_FormClosed);
             this.pnlRegion.ResumeLayout(false);
             this.pnlRegion.PerformLayout();
             this.ResumeLayout(false);
@@ -128,9 +140,10 @@
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Panel pnlRegion;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblResp;
+        private System.Windows.Forms.Label lblLibRegion;
+        private System.Windows.Forms.ComboBox cboResp;
+        private System.Windows.Forms.TextBox txtLib;
+        private System.Windows.Forms.Button btnSave;
     }
 }
