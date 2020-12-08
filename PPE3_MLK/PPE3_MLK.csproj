@@ -178,6 +178,9 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>mdlProjetGSB.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAdministration\FrmGestionRegion.resx">
+      <DependentUpon>FrmGestionRegion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAdministration\FrmGestionSecteur.resx">
       <DependentUpon>FrmGestionSecteur.cs</DependentUpon>
     </EmbeddedResource>
